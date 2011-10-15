@@ -1,0 +1,39 @@
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+#ls
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+#cd
+alias ..='cd ..'
+alias cdd='cd -'
+alias cdom='cd ~/www/OM-JCHARA/OM'
+alias cdmw='cd ~/www/my_www'
+alias cdvf='cd ~/.vim'
+
+# Edit aliases and reload them
+alias reload='source ~/bin/dotfiles/bash/aliases'
+alias ea='vim ~/bin/dotfiles/bash/aliases && reload'
+
+#Rails
+alias r='rake'
+alias rmig='rake db:migrate'
+alias rs='rails server'
+alias rg='rails generate'
+
+#Git
+function gg() {
+	git commit -v -a -m "$*"
+}
+alias gst='git status'

@@ -1,0 +1,15 @@
+[user]
+	name = Jiri Chara
+	email = jirik.chara@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[color "status"]
+	changed = yellow
+	added = green
+	untracked = red
+[alias]
+	co = checkout
+	br = branch
+	st = status
