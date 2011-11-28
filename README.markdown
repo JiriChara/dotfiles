@@ -48,3 +48,5 @@
 	sudo apt-get install ncurses-term 
 	sudo apt-get install zsh
 	chsh -s /bin/zsh
+	sudo apt-get install imagemagick
+	sudo apt-get install redis-server
