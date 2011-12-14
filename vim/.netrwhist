@@ -1,7 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/jiri/www/diaspora'
-let g:netrw_dirhist_2='/home/jiri/www/my_www/config/initializers'
-let g:netrw_dirhist_3='/home/jiri/www/OM-JCHARA/OM'
-let g:netrw_dirhist_4='/home/jiri/Documents/tmp/vending_machine'
-let g:netrw_dirhist_5='/home/jiri/bin/dotfiles/irssi'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/jiri/www/OM-JCHARA/OM'

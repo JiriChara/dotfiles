@@ -50,3 +50,4 @@
 	chsh -s /bin/zsh
 	sudo apt-get install imagemagick
 	sudo apt-get install redis-server
+	sudo apt-get install msmtp

@@ -23,6 +23,8 @@ set showmode
 set showmatch
 
 set backspace=indent,eol,start
+set autoindent
+set copyindent
 
 set hidden
 
@@ -43,10 +45,9 @@ set scrolloff=3
 
 set title
 
-set backup
+set nobackup
+set noswapfile
 set history=500
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
 
 set tabstop=2
 set shiftwidth=2
@@ -74,3 +75,26 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:snips_author = 'Jiri Chara'
 
 au BufRead,BufNewFile *.scss set filetype=scss
+
+" Fugitive
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+autocmd User fugitive
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+
+if has("autocmd")
+  " Enable filetype detection
+  filetype plugin indent on
+ 
+  " Restore cursor position
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+endif
+if &t_Co > 2 || has("gui_running")
+  " Enable syntax highlighting
+  syntax on
+endif
