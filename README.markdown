@@ -51,3 +51,4 @@
 	sudo apt-get install imagemagick
 	sudo apt-get install redis-server
 	sudo apt-get install msmtp
+	sudo apt-get install libqt4-dev libqtwebkit-dev # for capybara

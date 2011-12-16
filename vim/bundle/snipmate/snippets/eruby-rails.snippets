@@ -1,7 +1,7 @@
 snippet ct
 	<%= content_tag '${1:DIV}', ${2:content}${3:,options} -%>
 snippet ff
-	<% form_for @${1:model} do |f| -%>
+	<%= form_for @${1:model} do |f| -%>
 		${2}
 	<% end -%>
 snippet ffcb
