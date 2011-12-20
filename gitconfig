@@ -13,3 +13,4 @@
 	co = checkout
 	br = branch
 	st = status
+	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
