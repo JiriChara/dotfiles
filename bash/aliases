@@ -18,7 +18,7 @@ alias l='ls -CF'
 #cd
 alias ..='cd ..'
 alias cdd='cd -'
-alias cdom='cd ~/www/OM-JCHARA/OM'
+alias cdom='cd ~/www/OM'
 alias cdmw='cd ~/www/my_www'
 alias cdvf='cd ~/.vim'
 
