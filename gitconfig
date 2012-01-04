@@ -5,6 +5,7 @@
 	diff = auto
 	status = auto
 	branch = auto
+  interactive = auto
 [color "status"]
 	changed = yellow
 	added = green
@@ -12,5 +13,7 @@
 [alias]
 	co = checkout
 	br = branch
-	st = status
-	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+	st = status -s
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+  int = merge --no-ff
