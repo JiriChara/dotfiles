@@ -37,3 +37,7 @@ function gg() {
 	git commit -v -a -m "$*"
 }
 alias gst='git status'
+
+#Vim
+alias vi='vim'
+alias v='vim'
