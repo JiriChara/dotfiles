@@ -1,0 +1,4 @@
+:Rvm	rvm.txt	/*:Rvm*
+rvm#statusline()	rvm.txt	/*rvm#statusline()*
+rvm-about	rvm.txt	/*rvm-about*
+rvm.txt	rvm.txt	/*rvm.txt*

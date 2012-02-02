@@ -4,7 +4,7 @@ setopt prompt_subst
 PROMPT='
 %n%{$fg_bold[red]%}@%{$reset_color%}%m
 %~ %{$fg_bold[black]%}$(vcprompt)
-%{$fg[red]%}𝄞 %{$reset_color%}'
+%{$fg[red]%}%# %{$reset_color%}'
 
 # Set RPROMPT to have info show up on the right, too.
 

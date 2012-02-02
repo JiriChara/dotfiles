@@ -68,6 +68,9 @@ set ttyfast
 
 set listchars=tab:▸\ ,eol:¬
 
+" Ragtags
+let g:ragtag_global_maps = 1
+
 nmap <leader>l :set list!<CR>
 
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
