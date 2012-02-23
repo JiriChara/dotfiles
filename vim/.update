@@ -1,0 +1,26 @@
+#!/bin/zsh
+# Pull the newest version for all vim plugins
+# Author: Jiri Chara
+# E-mail: jirik.chara@gmail.com
+
+home=~/bin/dotfiles
+bundles=~/bin/dotfiles/vim/bundle
+
+if [ -e $bundles ]
+then
+	for file in ~/bin/dotfiles/vim/bundle/*
+	do
+		if [ -d "$file" ]
+		then
+			if [ -e $file/.git ]
+			then
+				cd "$home"
+				git submodule add "$file" `basename $file`
+			else
+				echo "no git repo in $file."
+			fi
+		fi
+	done
+else
+	echo "$bundles does not extist."
+fi
