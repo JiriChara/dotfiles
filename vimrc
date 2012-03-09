@@ -1,4 +1,5 @@
 runtime! debian.vim
+runtime macros/matchit.vim
 
 set nocompatible
 
@@ -6,21 +7,12 @@ call pathogen#infect()
 
 set encoding=utf-8
 
-syntax on
-
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-if has("autocmd")
-  filetype plugin indent on
-endif
-
-runtime macros/matchit.vim
-
 set showcmd
 set showmode
 set showmatch
+set number
+set ruler
+set laststatus=2
 
 set backspace=indent,eol,start
 set autoindent
@@ -33,9 +25,6 @@ set wildmode=list:longest
 
 set ignorecase
 set smartcase
-
-set number
-set ruler
 
 set incsearch
 set hlsearch
@@ -52,17 +41,18 @@ set history=500
 set tabstop=2
 set shiftwidth=2
 
-set laststatus=2
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-
 set mouse=a
 
 set visualbell
 
+if &t_Co > 2 || has("gui_running")
+  " Enable syntax highlighting
+  syntax on
+endif
 set t_Co=256
 set term=gnome-256color
 colorscheme ch4rass
-set cursorcolumn
+" set cursorcolumn
 
 set ttyfast
 
@@ -81,11 +71,7 @@ au BufRead,BufNewFile *.scss set filetype=scss
 
 " Fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
-
-autocmd User fugitive
-  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-  \   nnoremap <buffer> .. :edit %:h<CR> |
-  \ endif
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 if has("autocmd")
   " Enable filetype detection
@@ -96,8 +82,4 @@ if has("autocmd")
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
-endif
-if &t_Co > 2 || has("gui_running")
-  " Enable syntax highlighting
-  syntax on
 endif
