@@ -1,4 +1,3 @@
-winpos 0 0
 set guioptions-=T
 set colorcolumn=80
 colorscheme vividchalk

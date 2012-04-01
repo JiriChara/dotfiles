@@ -5,16 +5,29 @@ set nocompatible
 
 call pathogen#infect()
 
+let g:snips_author = 'Jiri Chara'
+
 set encoding=utf-8
 
+" Tabs and Spaces
+if has("autocmd")
+  filetype on
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd BufNewFile,BufRead *.rss setfiletype xml
+endif
+
+set laststatus=2
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
 set showmode
 set showmatch
 set number
 set ruler
-set laststatus=2
+set backspace=2
 
-set backspace=indent,eol,start
 set autoindent
 set copyindent
 
@@ -38,9 +51,6 @@ set nobackup
 set noswapfile
 set history=500
 
-set tabstop=2
-set shiftwidth=2
-
 set mouse=a
 
 set visualbell
@@ -50,8 +60,7 @@ if &t_Co > 2 || has("gui_running")
   syntax on
 endif
 set t_Co=256
-set term=gnome-256color
-colorscheme ch4rass
+colorscheme mustang
 " set cursorcolumn
 
 set ttyfast
@@ -63,15 +72,10 @@ let g:ragtag_global_maps = 1
 
 nmap <leader>l :set list!<CR>
 
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-
-let g:snips_author = 'Jiri Chara'
-
 au BufRead,BufNewFile *.scss set filetype=scss
 
 " Fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 if has("autocmd")
   " Enable filetype detection
