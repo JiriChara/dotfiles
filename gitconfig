@@ -11,9 +11,9 @@
 	added = green
 	untracked = red
 [alias]
-	co = checkout
-	br = branch
-	st = status -s
+  co = checkout
+  br = branch
+  st = status -s
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
   int = merge --no-ff
