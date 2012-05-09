@@ -11,7 +11,7 @@ let g:loaded_ragtag = 1
 if has("autocmd")
   augroup ragtag
     autocmd!
-    autocmd FileType *html*,wml,jsp                 call s:Init()
+    autocmd FileType *html*,wml,jsp,mustache        call s:Init()
     autocmd FileType php,asp*,cf,mason,eruby,liquid call s:Init()
     autocmd FileType xml,xslt,xsd,docbk             call s:Init()
     if version >= 700
@@ -82,6 +82,13 @@ function! s:Init()
     if !exists("b:surround_101")
       let b:surround_101 = "[% \r %]\n[% END %]"
     endif
+  elseif &ft == "mustache"
+    inoremap <buffer> <SID>ragtagOopen    {{<Space>
+    inoremap <buffer> <SID>ragtagOclose   <Space>}}<Left><Left>
+    inoremap <buffer> <C-X><Lt> {{
+    inoremap <buffer> <C-X>>    }}
+    let b:surround_45 = "{{ \r }}"
+    let b:surround_61 = "{{ \r }}"
   elseif &ft =~ "django" || &ft == "liquid" || &ft == 'htmljinja'
     inoremap <buffer> <SID>ragtagOopen    {{<Space>
     inoremap <buffer> <SID>ragtagOclose   <Space>}}<Left><Left>
@@ -175,9 +182,9 @@ function! s:Init()
       runtime! indent/html.vim
     endif
   endif
-  " Pet peeve.  Do people still not close their <p> and <li> tags?
   if exists("g:html_indent_tags") && g:html_indent_tags !~ '\\|p\>'
     let g:html_indent_tags = g:html_indent_tags.'\|p\|li\|dt\|dd'
+    let g:html_indent_tags = g:html_indent_tags.'\|article\|aside\|audio\|bdi\|canvas\|command\|datalist\|details\|figcaption\|figure\|footer\|header\|hgroup\|mark\|meter\|nav\|output\|progress\|rp\|rt\|ruby\|section\|summary\|time\|video'
   endif
   set indentkeys+=!^F
   let b:surround_indent = 1
