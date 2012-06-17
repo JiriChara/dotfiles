@@ -1,0 +1,12 @@
+# Passwords
+set my_gmail_pw=`gpg --batch -q --decrypt ~/.mutt/gmail_pw`
+
+account-hook imaps://jirik.chara@imap.gmail.com 'set imap_user=jirik.chara@gmail.com imap_pass="$my_gmail_pw"'
+folder-hook imaps://jirik.chara@imap.googlemail.com 'source ~/.mutt/google'
+
+mailboxes imaps://login@imap.gmail.com/
+
+source ~/.mutt/google
+
+set editor=vim
+set signature=~/.mutt/signature
