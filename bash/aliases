@@ -18,9 +18,6 @@ alias l='ls -CF'
 #cd
 alias ..='cd ..'
 alias cdd='cd -'
-alias cdom='cd ~/www/OM'
-alias cdmw='cd ~/www/my_www'
-alias cdvf='cd ~/.vim'
 
 # Edit aliases and reload them
 alias reload='source ~/bin/dotfiles/bash/aliases'
@@ -29,6 +26,7 @@ alias ea='vim ~/bin/dotfiles/bash/aliases && reload'
 #Rails
 alias r='rake'
 alias rmig='rake db:migrate'
+alias rroll='rake db:rollback'
 alias rs='rails server'
 alias rg='rails generate'
 

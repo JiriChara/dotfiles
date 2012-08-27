@@ -51,3 +51,6 @@ bindkey -e
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# Auto CD
+setopt autocd
