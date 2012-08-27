@@ -1,0 +1,31 @@
+# Passwords
+set my_gmail_pw=`gpg --batch -q --decrypt ~/.mutt/gmail_pw`
+
+# Details
+set realname="Jiri Chara"
+set from="jirik.chara@gmail.com"
+set use_from=yes
+set envelope_from=yes
+set signature=~/.mutt/signature
+
+# Editor
+set editor=vim
+set edit_headers=yes
+
+# Sendmail
+set sendmail=/usr/sbin/sendmail
+set sendmail_wait=-1
+
+# Cache
+set header_cache="~/.mutt/cache/headers"
+set message_cachedir="~/.mutt/cache/bodies"
+
+account-hook imaps://jirik.chara@imap.gmail.com 'set imap_user=jirik.chara@gmail.com imap_pass="$my_gmail_pw"'
+folder-hook imaps://jirik.chara@imap.googlemail.com 'source ~/.mutt/google'
+
+mailboxes imaps://login@imap.gmail.com/
+
+source ~/.mutt/google
+
+set smtp_url="smtp://jirik.chara@smtp.gmail.com:587/"
+set smtp_pass=$my_gmail_pw
