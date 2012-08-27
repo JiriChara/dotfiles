@@ -27,6 +27,7 @@ alias ea='vim ~/bin/dotfiles/bash/aliases && reload'
 alias r='rake'
 alias rmig='rake db:migrate'
 alias rroll='rake db:rollback'
+alias rsun='rake sunspot:solr:start'
 alias rs='rails server'
 alias rg='rails generate'
 
