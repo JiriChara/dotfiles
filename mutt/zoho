@@ -1,0 +1,6 @@
+set from=jiri@organisedminds.com
+set hostname=organisedminds.com
+set folder="imaps://jiri@imap.zoho.com/"
+set postponed="=Drafts"
+set record="=Sent"
+set spoolfile="=INBOX"

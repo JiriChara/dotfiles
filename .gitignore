@@ -2,3 +2,6 @@ xchat2/scrollback/*
 vim/backup/*
 vim/tmp/*
 vim/.netrwhist
+mutt/cache
+mutt/cache/*/*
+mutt/aliases

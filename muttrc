@@ -1,5 +1,6 @@
 # Passwords
 set my_gmail_pw=`gpg --batch -q --decrypt ~/.mutt/gmail_pw`
+set my_zoho_pw=`gpg --batch -q --decrypt ~/.mutt/zoho_pw`
 
 # Details
 set realname="Jiri Chara"
@@ -7,25 +8,50 @@ set from="jirik.chara@gmail.com"
 set use_from=yes
 set envelope_from=yes
 set signature=~/.mutt/signature
+set sig_dashes=yes
 
 # Editor
 set editor=vim
-set edit_headers=yes
+# set edit_headers=yes
 
 # Sendmail
 set sendmail=/usr/sbin/sendmail
 set sendmail_wait=-1
+set smtp_url="smtp://jirik.chara@smtp.gmail.com:587/"
+set smtp_pass=$my_gmail_pw
+
+# Fetchmail
+account-hook imaps://jirik.chara@imap.gmail.com 'set imap_user=jirik.chara@gmail.com imap_pass="$my_gmail_pw"'
+folder-hook imaps://jirik.chara@imap.gmail.com 'source ~/.mutt/gmail'
+mailboxes imaps://jirik.chara@imap.gmail.com/
+
+account-hook imaps://jiri@imap.zoho.com 'set imap_user=jiri@organisedminds.com imap_pass="$my_zoho_pw"'
+folder-hook imaps://jiri@imap.zoho.com 'source ~/.mutt/zoho'
+mailboxes imap://jiri@imap.zoho.com/
+
+source ~/.mutt/gmail
+set timeout=60 # Check mail every minute
+set mail_check=10
 
 # Cache
 set header_cache="~/.mutt/cache/headers"
 set message_cachedir="~/.mutt/cache/bodies"
 
-account-hook imaps://jirik.chara@imap.gmail.com 'set imap_user=jirik.chara@gmail.com imap_pass="$my_gmail_pw"'
-folder-hook imaps://jirik.chara@imap.googlemail.com 'source ~/.mutt/google'
+# Certs
+set certificate_file=~/.mutt/certificates
 
-mailboxes imaps://login@imap.gmail.com/
+# Other
+set smart_wrap=yes
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set noallow_8bit
+set charset=utf-8
+set include # Include the message in replies.
+set nobeep
+set pager_index_lines=8
 
-source ~/.mutt/google
-
-set smtp_url="smtp://jirik.chara@smtp.gmail.com:587/"
-set smtp_pass=$my_gmail_pw
+set alias_file= ~/.mutt/aliases
+set sort_alias=alias
+set reverse_alias=yes
+source $alias_file
+source ~/.mutt/macros

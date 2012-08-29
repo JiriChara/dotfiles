@@ -1,7 +1,7 @@
 export EDITOR="vim"
 export JRUBY_OPTS="--1.9"
-JAVA_HOME=/usr/local/java/jdk1.6.0_31
-PATH=$PATH:~/bin:~/android-sdk-linux/tools:~/android-sdk-linux/platform-tools:~/eclipse:~/Titanium_Studio:$JAVA_HOME/bin
+JAVA_HOME=/usr/local/java/jdk1.7.0_04
+PATH=$PATH:~/bin:~/android-sdk-linux/tools:~/android-sdk-linux/platform-tools:~/eclipse:$JAVA_HOME/bin:~/bin/ytmplayer
 export JAVA_HOME
 export PATH
 
