@@ -24,16 +24,15 @@ alias reload='source ~/bin/dotfiles/bash/aliases'
 alias ea='vim ~/bin/dotfiles/bash/aliases && reload'
 
 #Rails
-alias r='rake'
+alias be='bundle exec'
+alias rspec='be rspec -c'
+alias rails='be rails'
+alias rake='be rake'
 alias rmig='rake db:migrate'
 alias rroll='rake db:rollback'
 alias rsun='rake sunspot:solr:start'
 alias rs='rails server'
 alias rg='rails generate'
-alias be='bundle exec'
-alias rspec='be rspec -c'
-alias rails='be rails'
-alias rake='be rake'
 
 #Git
 function gg() {
