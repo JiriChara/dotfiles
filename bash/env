@@ -7,5 +7,6 @@ export PATH
 
 gems=~/projects/gems
 om=~/projects/OM
+om_model=~/projects/gems/om_model/lib/om_model
 api=~/projects/API
 tiapp=~/titanium-projects/titanium_app
