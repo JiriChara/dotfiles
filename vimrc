@@ -75,7 +75,7 @@ if &t_Co > 2 || has("gui_running")
   syntax on
 endif
 set t_Co=256
-colorscheme mustang
+colorscheme ch4rass
 " set cursorcolumn
 
 set ttyfast
