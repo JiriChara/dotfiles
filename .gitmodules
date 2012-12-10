@@ -1,3 +1,6 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/TailMinusF"]
+	path = vim/bundle/TailMinusF
+	url = git://github.com/vim-scripts/TailMinusF.git
