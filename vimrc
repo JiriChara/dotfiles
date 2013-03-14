@@ -15,7 +15,7 @@ if has("autocmd")
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
 
@@ -86,6 +86,10 @@ set listchars=tab:▸\ ,eol:¬
 let g:ragtag_global_maps = 1
 
 nmap <leader>l :set list!<CR>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 au BufRead,BufNewFile *.scss set filetype=scss
 
