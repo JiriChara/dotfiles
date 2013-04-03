@@ -1,4 +1,5 @@
 export EDITOR="vim"
+export TERM="xterm-256color"
 export JRUBY_OPTS="--1.9"
 JAVA_HOME=/usr/local/java/jdk1.7.0_04
 PATH=$PATH:~/bin:~/android-sdk-linux/tools:~/android-sdk-linux/platform-tools:~/eclipse:$JAVA_HOME/bin:~/bin/ytmplayer
