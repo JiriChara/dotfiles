@@ -1,9 +1,9 @@
+call pathogen#infect()
+
 runtime! debian.vim
 runtime macros/matchit.vim
 
 set nocompatible
-
-call pathogen#infect()
 
 let g:snips_author = 'Jiri Chara'
 
@@ -18,20 +18,6 @@ if has("autocmd")
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
-
-function! Preserve(command)
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  execute a:command
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
-endfunction
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
-nmap _= :call Preserve("normal gg=G")<CR>
 
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -71,25 +57,32 @@ set mouse=a
 set visualbell
 
 if &t_Co > 2 || has("gui_running")
-  " Enable syntax highlighting
   syntax on
 endif
 set t_Co=256
-colorscheme ch4rass
-" set cursorcolumn
+set background=dark
+colorscheme jellybeans
 
 set ttyfast
-
-set listchars=tab:▸\ ,eol:¬
 
 " Ragtags
 let g:ragtag_global_maps = 1
 
+" Tabs and eol
+set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+
+" No arrow keys
+nmap <Up> <NOP>
+nmap <Down> <NOP>
+nmap <Left> <NOP>
+nmap <Right> <NOP>
+
+" Movement between splits
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
 
 au BufRead,BufNewFile *.scss set filetype=scss
 
@@ -107,8 +100,6 @@ if has("autocmd")
     \ endif
 endif
 
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-
 " makes * and # work on visual mode too.
 function! s:VSetSearch(cmdtype)
   let temp = @s
@@ -123,3 +114,25 @@ xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 " recursively vimgrep for word under cursor or selection if you hit leader-star
 nmap <leader>* :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
 vmap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
+
+function! OpenChangedFiles()
+  only " Close all windows, unless they're modified
+  let status = system('git status -s | grep "^ \?\(M\|A\|UU\)" | sed "s/^.\{3\}//"')
+  let filenames = split(status, "\n")
+  exec "edit " . filenames[0]
+  for filename in filenames[1:]
+    exec "sp " . filename
+  endfor
+endfunction
+command! OpenChangedFiles :call OpenChangedFiles()
+
+function! Preserve(command)
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  execute a:command
+  let @/=_s
+  call cursor(l, c)
+endfunction
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap _= :call Preserve("normal gg=G")<CR>
