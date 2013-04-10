@@ -9,16 +9,6 @@ let g:snips_author = 'Jiri Chara'
 
 set encoding=utf-8
 
-" Tabs and Spaces
-if has("autocmd")
-  filetype on
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd BufNewFile,BufRead *.rss setfiletype xml
-endif
-
 set laststatus=2
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
@@ -56,6 +46,9 @@ set mouse=a
 
 set visualbell
 
+set cursorline
+set cursorcolumn
+
 if &t_Co > 2 || has("gui_running")
   syntax on
 endif
@@ -72,6 +65,17 @@ let g:ragtag_global_maps = 1
 set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
 
+" Tabs and Spaces
+if has("autocmd")
+  filetype on
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd BufNewFile,BufRead *.rss setfiletype xml
+endif
+
+
 " No arrow keys
 nmap <Up> <NOP>
 nmap <Down> <NOP>
@@ -84,13 +88,10 @@ nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
 
-au BufRead,BufNewFile *.scss set filetype=scss
-
 " Fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 if has("autocmd")
-  " Enable filetype detection
   filetype plugin indent on
  
   " Restore cursor position
@@ -100,14 +101,13 @@ if has("autocmd")
     \ endif
 endif
 
-" makes * and # work on visual mode too.
+" Makes * and # work on visual mode too.
 function! s:VSetSearch(cmdtype)
   let temp = @s
   norm! gv"sy
   let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
   let @s = temp
 endfunction
-
 xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 
