@@ -46,8 +46,7 @@ set mouse=a
 
 set visualbell
 
-set cursorline
-set cursorcolumn
+nmap <leader>cc :set cursorline! cursorcolumn!<CR>
 
 if &t_Co > 2 || has("gui_running")
   syntax on
