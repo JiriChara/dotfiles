@@ -1,11 +1,18 @@
 call pathogen#infect()
-
-runtime! debian.vim
-runtime macros/matchit.vim
-
 set nocompatible
 
+" Enable syntax
+if &t_Co > 2 || has("gui_running")
+  syntax on
+endif
+
+runtime! debian.vim
+runtime! macros/matchit.vim
+
 let g:snips_author = 'Jiri Chara'
+let g:rails_no_abbreviations = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ragtag_global_maps = 1
 
 set encoding=utf-8
 
@@ -46,46 +53,13 @@ set mouse=a
 
 set visualbell
 
-nmap <leader>cc :set cursorline! cursorcolumn!<CR>
-
-if &t_Co > 2 || has("gui_running")
-  syntax on
-endif
 set t_Co=256
 set background=dark
-colorscheme jellybeans
+colorscheme ch4rass
 
 set ttyfast
 
-" Ragtags
-let g:ragtag_global_maps = 1
-
-" Tabs and eol
 set listchars=tab:▸\ ,eol:¬
-nmap <leader>l :set list!<CR>
-
-" Tabs and Spaces
-if has("autocmd")
-  filetype on
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd BufNewFile,BufRead *.rss setfiletype xml
-endif
-
-
-" No arrow keys
-nmap <Up> <NOP>
-nmap <Down> <NOP>
-nmap <Left> <NOP>
-nmap <Right> <NOP>
-
-" Movement between splits
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
 
 " Fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
@@ -100,6 +74,10 @@ if has("autocmd")
     \ endif
 endif
 
+" ====================
+" FUNCTION DEFINITIONS
+" ====================
+
 " Makes * and # work on visual mode too.
 function! s:VSetSearch(cmdtype)
   let temp = @s
@@ -110,10 +88,7 @@ endfunction
 xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 
-" recursively vimgrep for word under cursor or selection if you hit leader-star
-nmap <leader>* :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
-vmap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
-
+" Open all changed files
 function! OpenChangedFiles()
   only " Close all windows, unless they're modified
   let status = system('git status -s | grep "^ \?\(M\|A\|UU\)" | sed "s/^.\{3\}//"')
@@ -133,5 +108,77 @@ function! Preserve(command)
   let @/=_s
   call cursor(l, c)
 endfunction
+
+
+" ====================
+" INSERT MODE MAPPINGS
+" ====================
+
+" jjj         : Esc
+ino jjj <Esc>
+
+
+" ====================
+" NORMAL MODE MAPPINGS
+" ====================
+
+" Disable arrow keys
+nmap <Up> <nop>
+nmap <Down> <nop>
+nmap <Left> <nop>
+nmap <Right> <nop>
+
+" Fast movement between splits
+" <c-j>       : go to bottom split
+" <c-k>       : go to top split
+" <c-h>       : go to left split
+" <c-l>       : go to right split
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+
+" Mappings to access buffers
+" \ll         : list buffers
+" \b \f \g    : go back/forward/last-used
+" \1 \2 \3    : go to buffer 1/2/3 etc..
+nmap <leader>ll :ls<CR>
+nmap <leader>b :bp<CR>
+nmap <leader>f :bn<CR>
+nmap <leader>g :e#<CR>
+nmap <leader>1 :1b<CR>
+nmap <leader>2 :2b<CR>
+nmap <leader>3 :3b<CR>
+nmap <leader>4 :4b<CR>
+nmap <leader>5 :5b<CR>
+nmap <leader>6 :6b<CR>
+nmap <leader>7 :7b<CR>
+nmap <leader>8 :8b<CR>
+nmap <leader>9 :9b<CR>
+nmap <leader>0 :10b<CR>
+
+nmap <leader>h :noh<CR>
+
+map Q @q
+
+" _$        : remove end line spaces
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+" _$        : indent code
 nmap _= :call Preserve("normal gg=G")<CR>
+
+" \*        : recursively vimgrep for word under cursor
+nmap <leader>* :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
+
+" \l        : show/hide tabs and line endings
+nmap <leader>l :set list!<CR>
+
+" \cc       : show/hide cursorline and cursorcolumn
+nmap <leader>cc :set cursorline! cursorcolumn!<CR>
+
+
+" ====================
+" VISUAL MODE MAPPINGS
+" ====================
+
+" \*        : recursively vimgrep for selection
+vmap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>

@@ -1,6 +1,8 @@
 [user]
 	name = Jiri Chara
 	email = jirik.chara@gmail.com
+[github]
+	user = JiriChara
 [color]
 	diff = auto
 	status = auto
@@ -12,6 +14,7 @@
 	untracked = red
 [alias]
   co = checkout
+  puhs = push
   br = branch
   st = status -s
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
