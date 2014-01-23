@@ -13,6 +13,7 @@ let g:snips_author = 'Jiri Chara'
 let g:rails_no_abbreviations = 1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ragtag_global_maps = 1
+let g:EasyMotion_leader_key = 'ě'
 
 set encoding=utf-8
 
@@ -55,7 +56,7 @@ set visualbell
 
 set t_Co=256
 set background=dark
-colorscheme ch4rass
+colorscheme skittles_berry
 
 set ttyfast
 
