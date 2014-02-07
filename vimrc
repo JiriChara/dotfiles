@@ -56,11 +56,22 @@ set visualbell
 
 set t_Co=256
 set background=dark
-colorscheme skittles_berry
+colorscheme ch4rass
 
 set ttyfast
 
 set listchars=tab:▸\ ,eol:¬
+
+" Tabs and Spaces
+if has("autocmd")
+  filetype on
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd BufNewFile,BufRead *.rss setfiletype xml
+endif
+
 
 " Fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
@@ -159,6 +170,9 @@ nmap <leader>9 :9b<CR>
 nmap <leader>0 :10b<CR>
 
 nmap <leader>h :noh<CR>
+
+nmap j gj
+nmap k gk
 
 map Q @q
 
