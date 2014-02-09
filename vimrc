@@ -1,4 +1,5 @@
 call pathogen#infect()
+
 set nocompatible
 
 " Enable syntax
@@ -11,9 +12,12 @@ runtime! macros/matchit.vim
 
 let g:snips_author = 'Jiri Chara'
 let g:rails_no_abbreviations = 1
-let g:ctrlp_clear_cache_on_exit = 0
+" let g:ctrlp_clear_cache_on_exit = 0
 let g:ragtag_global_maps = 1
-let g:EasyMotion_leader_key = 'ě'
+let g:EasyMotion_leader_key = '<space>'
+
+let mapleader = "-"
+let maplocalleader = "\\"
 
 set encoding=utf-8
 
@@ -78,7 +82,7 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 
 if has("autocmd")
   filetype plugin indent on
- 
+
   " Restore cursor position
   autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -126,8 +130,8 @@ endfunction
 " INSERT MODE MAPPINGS
 " ====================
 
-" jjj         : Esc
-ino jjj <Esc>
+" jk         : Esc
+inoremap jk <Esc>
 
 
 " ====================
@@ -135,60 +139,57 @@ ino jjj <Esc>
 " ====================
 
 " Disable arrow keys
-nmap <Up> <nop>
-nmap <Down> <nop>
-nmap <Left> <nop>
-nmap <Right> <nop>
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
 
 " Fast movement between splits
 " <c-j>       : go to bottom split
 " <c-k>       : go to top split
 " <c-h>       : go to left split
 " <c-l>       : go to right split
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 " Mappings to access buffers
 " \ll         : list buffers
 " \b \f \g    : go back/forward/last-used
 " \1 \2 \3    : go to buffer 1/2/3 etc..
-nmap <leader>ll :ls<CR>
-nmap <leader>b :bp<CR>
-nmap <leader>f :bn<CR>
-nmap <leader>g :e#<CR>
-nmap <leader>1 :1b<CR>
-nmap <leader>2 :2b<CR>
-nmap <leader>3 :3b<CR>
-nmap <leader>4 :4b<CR>
-nmap <leader>5 :5b<CR>
-nmap <leader>6 :6b<CR>
-nmap <leader>7 :7b<CR>
-nmap <leader>8 :8b<CR>
-nmap <leader>9 :9b<CR>
-nmap <leader>0 :10b<CR>
+nnoremap <leader>ll :ls<CR>
+nnoremap <leader>b :bp<CR>
+nnoremap <leader>f :bn<CR>
+nnoremap <leader>g :e#<CR>
+nnoremap <leader>1 :1b<CR>
+nnoremap <leader>2 :2b<CR>
+nnoremap <leader>3 :3b<CR>
+nnoremap <leader>4 :4b<CR>
+nnoremap <leader>5 :5b<CR>
+nnoremap <leader>6 :6b<CR>
+nnoremap <leader>7 :7b<CR>
+nnoremap <leader>8 :8b<CR>
+nnoremap <leader>9 :9b<CR>
+nnoremap <leader>0 :10b<CR>
 
-nmap <leader>h :noh<CR>
+nnoremap <leader>h :noh<CR>
 
-nmap j gj
-nmap k gk
+nnoremap j gj
+nnoremap k gk
 
-map Q @q
+nnoremap Q @q
 
 " _$        : remove end line spaces
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nnoremap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 " _$        : indent code
-nmap _= :call Preserve("normal gg=G")<CR>
-
-" \*        : recursively vimgrep for word under cursor
-nmap <leader>* :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
+nnoremap _= :call Preserve("normal gg=G")<CR>
 
 " \l        : show/hide tabs and line endings
-nmap <leader>l :set list!<CR>
+nnoremap <leader>l :set list!<CR>
 
 " \cc       : show/hide cursorline and cursorcolumn
-nmap <leader>cc :set cursorline! cursorcolumn!<CR>
+nnoremap <leader>cc :set cursorline! cursorcolumn!<CR>
 
 
 " ====================
@@ -196,4 +197,4 @@ nmap <leader>cc :set cursorline! cursorcolumn!<CR>
 " ====================
 
 " \*        : recursively vimgrep for selection
-vmap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
+vnoremap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
