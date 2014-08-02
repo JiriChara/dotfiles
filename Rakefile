@@ -1,50 +1,51 @@
+# Rakefile
 require 'rake'
-require 'erb'
 
-desc "install the dot files into user's home directory"
+skip_files = %w[
+  Rakefile
+  README.markdown
+]
+
+desc "install vim files into user's home directory"
 task :install do
   replace_all = false
+
   Dir['*'].each do |file|
-    next if %w[Rakefile README.markdown].include? file
-    
-    if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
-      if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
-        puts "identical ~/.#{file.sub('.erb', '')}"
+    next if skip_files.include?(file)
+
+    file_path = File.join(ENV['HOME'], ".#{file}")
+
+    if File.exists?(file_path)
+      if File.identical?(file, file_path)
+        puts("identical #{file_path}")
       elsif replace_all
-        replace_file(file)
+        replace_file(file, file_path)
       else
-        print "overwrite ~/.#{file.sub('.erb', '')}? [ynaq] "
+        print "overwrite #{file_path}? [ynaq]"
         case $stdin.gets.chomp
         when 'a'
           replace_all = true
-          replace_file(file)
+          replace_file(file, file_path)
         when 'y'
-          replace_file(file)
+          replace_file(file, file_path)
         when 'q'
           exit
         else
-          puts "skipping ~/.#{file.sub('.erb', '')}"
+          puts "skipping #{file_path}"
         end
       end
     else
-      link_file(file)
+      link_file(file, file_path)
     end
   end
 end
 
-def replace_file(file)
-  system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
-  link_file(file)
+def replace_file(file, file_path)
+  system "rm -rf #{file_path}"
+  link_file(file, file_path)
 end
 
-def link_file(file)
-  if file =~ /.erb$/
-    puts "generating ~/.#{file.sub('.erb', '')}"
-    File.open(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"), 'w') do |new_file|
-      new_file.write ERB.new(File.read(file)).result(binding)
-    end
-  else
-    puts "linking ~/.#{file}"
-    system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
-  end
+def link_file(file, file_path)
+  puts "linking #{file_path}"
+  system %Q{ln -s "$PWD/#{file}" "#{file_path}"}
 end

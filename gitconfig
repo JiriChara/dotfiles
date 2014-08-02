@@ -1,17 +1,17 @@
 [user]
-	name = Jiri Chara
-	email = jirik.chara@gmail.com
+  name = Jiri Chara
+  email = jirik.chara@gmail.com
 [github]
-	user = JiriChara
+  user = JiriChara
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
   interactive = auto
 [color "status"]
-	changed = yellow
-	added = green
-	untracked = red
+  changed = yellow
+  added = green
+  untracked = red
 [alias]
   co = checkout
   puhs = push

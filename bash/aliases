@@ -28,16 +28,8 @@ alias be='bundle exec'
 alias rspec='be rspec -c'
 alias rails='be rails'
 alias rake='be rake'
-alias rmig='rake db:migrate'
-alias rroll='rake db:rollback'
-alias rsun='rake sunspot:solr:start'
-alias rs='rails server'
-alias rg='rails generate'
 
 #Git
-function gg() {
-	git commit -v -a -m "$*"
-}
 alias gst='git status'
 
 #Vim
@@ -45,13 +37,3 @@ alias vi='vim'
 alias v='vim'
 
 alias psg='ps aux | grep'
-
-alias beta_get='curl -H "Content-Type: application/json" -H "Authorization: Bearer b226608ba785ed65f08aed1fa6421c5b7b943c083b9f561185536a700a0be320" -k'
-alias beta_put='beta_get -X PUT'
-alias beta_delete='beta_get -X DELETE'
-alias beta_post='beta_get -X POST'
-
-alias api_get='curl -H "Content-Type: application/json" -H "Authorization: Bearer x>"'
-alias api_put='api_get -X PUT'
-alias api_delete='api_get -X DELETE'
-alias api_post='api_get -X POST'

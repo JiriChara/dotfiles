@@ -1,13 +1,33 @@
 autoload -U colors
+autoload -Uz vcs_info
+
 colors
-setopt prompt_subst
-PROMPT='
-%n%{$fg_bold[red]%}@%{$reset_color%}%m
-%~ %{$fg_bold[black]%}$(vcprompt -f "%s %b %m%a%u")
-%{$fg[red]%}%# %{$reset_color%}'
+setopt PROMPT_SUBST
 
-# Set RPROMPT to have info show up on the right, too.
+zstyle ':vcs_info:*' enable git hg svn
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr '%F{green}M%f' 
+zstyle ':vcs_info:*' unstagedstr '%F{yellow}M%f'
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+zstyle ':vcs_info:git*' formats " %s %b %m%c%u"
 
++vi-git-untracked() {
+  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+    git status --porcelain | grep '??' &> /dev/null ; then
+    hook_com[unstaged]+='%F{red}?%f'
+  fi  
+}
+
+precmd () {
+  if [[ `stat -f -L -c %T $PWD` == *fuseblk* ]]; then
+    echo ""
+  else
+    vcs_info
+  fi
+}
+
+PROMPT="%B%~%b %{$fg_bold[red]%}%#%{$reset_color%} "
+RPROMPT='%h %n%{$fg_bold[red]%}@%{$reset_color%}%m${vcs_info_msg_0_}'
 #############################
 # Other Options
 
