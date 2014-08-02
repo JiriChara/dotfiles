@@ -6,3 +6,6 @@ PATH=$PATH:/opt/copy/x86_64/
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export PATH
+
+mvs=$HOME/Projects/mvs-corp.com/
+dot=$HOME/bin/dotfiles/
