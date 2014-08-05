@@ -4,8 +4,9 @@ export TERMINAL="uxterm"
 
 PATH=$PATH:/opt/copy/x86_64/
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/opt/phantomjs-1.9.7-linux-x86_64/bin
 
 export PATH
 
-mvs=$HOME/Projects/mvs-corp.com/
+mvs=/var/www/mvs-corp.com
 dot=$HOME/bin/dotfiles/

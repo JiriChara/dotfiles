@@ -70,9 +70,9 @@ set listchars=tab:▸\ ,eol:¬
 if has("autocmd")
   filetype on
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
 
