@@ -28,8 +28,6 @@ set showmode
 set showmatch
 set number
 set ruler
-set backspace=2
-set ts=2 sts=2 sw=2 expandtab
 
 set autoindent
 set copyindent
@@ -60,19 +58,23 @@ set visualbell
 
 set t_Co=256
 set background=dark
-colorscheme ch4rass
+colorscheme badwolf
 
 set ttyfast
 
 set listchars=tab:▸\ ,eol:¬
 
 " Tabs and Spaces
+set backspace=2
+set ts=4 sts=4 sw=4 expandtab
 if has("autocmd")
   filetype on
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType scss setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
 

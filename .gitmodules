@@ -73,3 +73,9 @@
 [submodule "vim/bundle/vim-projectionist"]
 	path = vim/bundle/vim-projectionist
 	url = git@github.com:tpope/vim-projectionist.git
+[submodule "vim/bundle/vim-webapi"]
+	path = vim/bundle/vim-webapi
+	url = git@github.com:mattn/webapi-vim.git
+[submodule "vim/bundle/vim-www-colorv"]
+	path = vim/bundle/vim-www-colorv
+	url = git@github.com:Rykka/colorv.vim.git
