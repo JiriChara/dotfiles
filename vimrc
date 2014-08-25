@@ -15,6 +15,8 @@ let g:rails_no_abbreviations = 1
 " let g:ctrlp_clear_cache_on_exit = 0
 let g:ragtag_global_maps = 1
 let g:EasyMotion_leader_key = '<space>'
+let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers = ['jshint']
 
 let mapleader = "-"
 let maplocalleader = "\\"

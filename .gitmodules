@@ -79,3 +79,6 @@
 [submodule "vim/bundle/vim-www-colorv"]
 	path = vim/bundle/vim-www-colorv
 	url = git@github.com:Rykka/colorv.vim.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = git@github.com:scrooloose/syntastic.git
