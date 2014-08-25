@@ -37,3 +37,5 @@ alias vi='vim'
 alias v='vim'
 
 alias psg='ps aux | grep'
+
+alias ccf='xclip -sel clip <'
