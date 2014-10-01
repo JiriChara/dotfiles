@@ -8,5 +8,5 @@ PATH=$PATH:/opt/phantomjs-1.9.7-linux-x86_64/bin
 
 export PATH
 
-mvs=/var/www/mvs-corp.com
+mvs=$HOME/Projects/mvs-corp.com
 dot=$HOME/bin/dotfiles/
