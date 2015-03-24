@@ -9,4 +9,6 @@ PATH=$PATH:/opt/phantomjs-1.9.7-linux-x86_64/bin
 export PATH
 
 mvs=$HOME/Projects/mvs-corp.com
+jch=$HOME/Projects/jiri.chara.blog
+jch2=$HOME/Projects/jirichara.com.v2
 dot=$HOME/bin/dotfiles/
