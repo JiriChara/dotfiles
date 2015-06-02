@@ -16,7 +16,7 @@ let g:rails_no_abbreviations = 1
 let g:ragtag_global_maps = 1
 let g:EasyMotion_leader_key = '<space>'
 let g:syntastic_check_on_open=1
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
 
 if executable('ag')
@@ -61,6 +61,7 @@ set title
 
 set nobackup
 set noswapfile
+
 set history=500
 
 set mouse=a
