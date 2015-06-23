@@ -16,7 +16,8 @@ let g:rails_no_abbreviations = 1
 let g:ragtag_global_maps = 1
 let g:EasyMotion_leader_key = '<space>'
 let g:syntastic_check_on_open=1
-let g:syntastic_javascript_checkers = ['jsxhint']
+
+let g:syntastic_javascript_checkers = ['jsxhint', 'jscs']
 let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
 
 if executable('ag')
@@ -140,6 +141,12 @@ function! Preserve(command)
   call cursor(l, c)
 endfunction
 
+" Toggle spell/wrap/linebreak
+function! WordSmith()
+    set wrap!
+    set linebreak!
+    set spell!
+endfunction
 
 " ====================
 " INSERT MODE MAPPINGS
