@@ -1,6 +1,43 @@
-call pathogen#infect()
-
 set nocompatible
+filetype off " required by Vundle
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+	Plugin 'vim-scripts/TailMinusF'
+	Plugin 'tpope/vim-endwise'
+	Plugin 'tpope/vim-fugitive'
+	Plugin 'tpope/vim-rails'
+	Plugin 'kchmck/vim-coffee-script'
+	Plugin 'tpope/vim-bundler'
+	Plugin 'tpope/vim-rake'
+	Plugin 'tpope/vim-abolish'
+	Plugin 'tpope/vim-ragtag'
+	Plugin 'tpope/vim-rvm'
+	Plugin 'scrooloose/nerdtree'
+	Plugin 'tpope/vim-surround'
+	Plugin 'tpope/vim-markdown'
+	Plugin 'tpope/vim-repeat'
+	Plugin 'tpope/vim-commentary'
+	Plugin 'kien/ctrlp.vim'
+	Plugin 'groenewege/vim-less'
+	Plugin 'tpope/vim-haml'
+	Plugin 'vim-ruby/vim-ruby'
+	Plugin 'tpope/vim-eunuch'
+	Plugin 'godlygeek/tabular'
+	Plugin 'mileszs/ack.vim'
+	Plugin 'pangloss/vim-javascript'
+	Plugin 'Lokaltog/vim-easymotion'
+	Plugin 'tpope/vim-projectionist'
+	Plugin 'mattn/webapi-vim'
+	Plugin 'Rykka/colorv.vim'
+	Plugin 'scrooloose/syntastic'
+	Plugin 'mxw/vim-jsx'
+	Plugin 'Shougo/neocomplete.vim'
+	Plugin 'JiriChara/dragvisuals.vim'
+	Plugin 'JiriChara/betterdigraphs.vim'
+call vundle#end()
+filetype plugin indent on " required by Vundle
 
 " Enable syntax
 if &t_Co > 2 || has("gui_running")
@@ -186,7 +223,7 @@ endfunction
 
 " jk         : Esc
 inoremap jk <Esc>
-
+inoremap <expr> <C-K> BDG_GetDigraph() 
 
 " ====================
 " NORMAL MODE MAPPINGS
@@ -257,7 +294,4 @@ vnoremap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /
 vmap <expr> <c-h> DVB_Drag('left')
 vmap <expr> <c-l> DVB_Drag('right')
 vmap <expr> <c-j> DVB_Drag('down')
-vmap <expr> <c-k> DVB_Drag('up')
-
-
-
+vmap <expr> <c-k> DVB_Drag('up') 
