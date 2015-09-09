@@ -88,3 +88,6 @@
 [submodule "vim/bundle/neocomplete"]
 	path = vim/bundle/neocomplete
 	url = git@github.com:Shougo/neocomplete.vim.git
+[submodule "vim/bundle/dragvisuals"]
+	path = vim/bundle/dragvisuals
+	url = git@github.com:JiriChara/dragvisuals.vim.git
