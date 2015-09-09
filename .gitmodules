@@ -91,3 +91,6 @@
 [submodule "vim/bundle/dragvisuals"]
 	path = vim/bundle/dragvisuals
 	url = git@github.com:JiriChara/dragvisuals.vim.git
+[submodule "vim/bundle/betterdigraphs.vim"]
+	path = vim/bundle/betterdigraphs.vim
+	url = git@github.com:JiriChara/betterdigraphs.vim.git
