@@ -173,6 +173,6 @@ assign [class="^Gimp$"]          → $ws8
 exec --no-startup-id nm-applet
 exec dbus-launch --exit-with-session /usr/bin/ssh-agent -- /etc/X11/Sessions/Xsession
 
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-bindsym XF86AudioMute exec amixer set Master 0%
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse -q sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse -q sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse -q sset Master toggle
