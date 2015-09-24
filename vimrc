@@ -55,7 +55,8 @@ let g:ragtag_global_maps = 1
 let g:EasyMotion_leader_key = '<space>'
 let g:syntastic_check_on_open=1
 
-let g:syntastic_javascript_checkers = ['jsxhint', 'jscs']
+" let g:syntastic_javascript_checkers = ['jsxhint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
 
 let g:acp_enableAtStartup = 0
@@ -121,7 +122,7 @@ set listchars=tab:▸\ ,eol:¬
 
 " Tabs and Spaces
 set backspace=2
-set ts=4 sts=4 sw=4 expandtab
+set ts=2 sts=2 sw=2 expandtab
 if has("autocmd")
   filetype on
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -129,9 +130,11 @@ if has("autocmd")
   autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType css setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType scss setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
   autocmd BufNewFile,BufRead *.rss setfiletype xml
+
+  autocmd BufNewFile,BufRead *.min.js set syntax=off
 endif
 
 
@@ -277,7 +280,7 @@ nnoremap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nnoremap _= :call Preserve("normal gg=G")<CR>
 
 " \l        : show/hide tabs and line endings
-nnoremap <leader>l :set list!<CR>
+nnoremap <leader>sl :set list!<CR>
 
 " \cc       : show/hide cursorline and cursorcolumn
 nnoremap <leader>cc :set cursorline! cursorcolumn!<CR>
