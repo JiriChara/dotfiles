@@ -1,6 +1,6 @@
 [user]
   name = Jiri Chara
-  email = jirik.chara@gmail.com
+  email = me@jirichara.com
 [github]
   user = JiriChara
 [color]
@@ -21,3 +21,9 @@
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
   int = merge --no-ff
   edit = !vim `git ls-files -m` -p
+[push]
+	default = simple
+[rerere]
+	enabled = true
+[status]
+	showUntrackedFiles = all
