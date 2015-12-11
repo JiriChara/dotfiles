@@ -21,9 +21,8 @@ call vundle#begin()
     Plugin 'tpope/vim-markdown'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-commentary'
-    Plugin 'kien/ctrlp.vim'
+    Plugin 'tpope/vim-dispatch'
     Plugin 'groenewege/vim-less'
-    Plugin 'tpope/vim-haml'
     Plugin 'vim-ruby/vim-ruby'
     Plugin 'tpope/vim-eunuch'
     Plugin 'godlygeek/tabular'
@@ -37,6 +36,8 @@ call vundle#begin()
     Plugin 'mxw/vim-jsx'
     Plugin 'Shougo/neocomplete.vim'
     Plugin 'JiriChara/dragvisuals.vim'
+    Plugin 'junegunn/fzf'
+    Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 filetype plugin indent on " required by Vundle
 
@@ -50,26 +51,26 @@ runtime! macros/matchit.vim
 
 let g:snips_author = 'Jiri Chara'
 let g:rails_no_abbreviations = 1
-" let g:ctrlp_clear_cache_on_exit = 0
+
+" CtrlP configuration
+" let g:ctrlp_max_files=0
+" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+" if executable('ag')
+"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" endif
+
 let g:ragtag_global_maps = 1
 let g:EasyMotion_leader_key = '<space>'
-let g:syntastic_check_on_open=1
 
+let g:syntastic_check_on_open = 1
+let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss', 'java'] }
 " let g:syntastic_javascript_checkers = ['jsxhint', 'jscs']
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss'] }
+" let g:syntastic_javascript_checkers = []
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-
-if executable('ag')
-  " Use Ag over Grep
-  " set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
 
 let mapleader = "-"
 let maplocalleader = "\\"
@@ -86,6 +87,7 @@ set ruler
 
 set autoindent
 set copyindent
+set list
 
 set hidden
 
@@ -112,9 +114,8 @@ set mouse=a
 
 set visualbell
 
-set t_Co=256
 set background=dark
-colorscheme badwolf
+colorscheme solarized
 
 set ttyfast
 
@@ -123,23 +124,36 @@ set listchars=tab:▸\ ,eol:¬
 " Tabs and Spaces
 set backspace=2
 set ts=2 sts=2 sw=2 expandtab
+
+set rtp+=~/.fzf
+
 if has("autocmd")
   filetype on
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType css setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType scss setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+
+  " TODO
+  " I don't wanna use tabs in all the projects, but only in AppDirect
+  autocmd FileType html setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType css setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType scss setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
+  autocmd FileType java setlocal ts=2 sts=2 sw=2 noexpandtab
 
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 
   autocmd BufNewFile,BufRead *.min.js set syntax=off
 endif
 
-
 " Fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+"NERD Tree
+" open NERDTree everytime VIM is opened and no files selected
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" map <C-n> to toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 if has("autocmd")
   filetype plugin indent on
@@ -221,6 +235,22 @@ function! SummarizeTabs()
   endtry
 endfunction
 
+function! ReplaceLTwithHex()
+  %s/Į/\\u012E/geI
+  %s/į/\\u012F/geI
+  %s/Š/\\u0160/geI
+  %s/ą/\\u0105/geI
+  %s/ū/\\u016B/geI
+  %s/Ų/\\u0172/geI
+  %s/ų/\\u0173/geI
+  %s/ž/\\u017E/geI
+  %s/ė/\\u0117/geI
+  %s/š/\\u0161/geI
+  %s/ę/\\u0119/geI
+  %s/ę/\\u0119/geI
+  %s/č/\\u010d/geI
+endfunction
+
 " ====================
 " INSERT MODE MAPPINGS
 " ====================
@@ -247,6 +277,9 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" FZF
+nnoremap <c-p> :FZF<CR>
 
 " Mappings to access buffers
 " \ll         : list buffers
