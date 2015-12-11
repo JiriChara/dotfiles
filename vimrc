@@ -38,6 +38,7 @@ call vundle#begin()
     Plugin 'JiriChara/dragvisuals.vim'
     Plugin 'junegunn/fzf'
     Plugin 'altercation/vim-colors-solarized'
+    Plugin 'thinca/vim-localrc'
 call vundle#end()
 filetype plugin indent on " required by Vundle
 
@@ -51,13 +52,6 @@ runtime! macros/matchit.vim
 
 let g:snips_author = 'Jiri Chara'
 let g:rails_no_abbreviations = 1
-
-" CtrlP configuration
-" let g:ctrlp_max_files=0
-" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-" if executable('ag')
-"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-" endif
 
 let g:ragtag_global_maps = 1
 let g:EasyMotion_leader_key = '<space>'
@@ -132,13 +126,11 @@ if has("autocmd")
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 
-  " TODO
-  " I don't wanna use tabs in all the projects, but only in AppDirect
-  autocmd FileType html setlocal ts=4 sts=4 sw=4 noexpandtab
-  autocmd FileType css setlocal ts=4 sts=4 sw=4 noexpandtab
-  autocmd FileType scss setlocal ts=4 sts=4 sw=4 noexpandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
-  autocmd FileType java setlocal ts=2 sts=2 sw=2 noexpandtab
+  autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType css setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType scss setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType java setlocal ts=2 sts=2 sw=2 expandtab
 
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 
