@@ -142,8 +142,8 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 
 "NERD Tree
 " open NERDTree everytime VIM is opened and no files selected
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " map <C-n> to toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
@@ -227,6 +227,7 @@ function! SummarizeTabs()
   endtry
 endfunction
 
+" AppDirect specific settings
 function! ReplaceLTwithHex()
   %s/Į/\\u012E/geI
   %s/į/\\u012F/geI
@@ -241,6 +242,20 @@ function! ReplaceLTwithHex()
   %s/ę/\\u0119/geI
   %s/ę/\\u0119/geI
   %s/č/\\u010d/geI
+endfunction
+
+" AppDirect rush
+command! -nargs=* ADRush call ADRush(<f-args>)
+function! ADRush(...)
+  if a:0 == 0 || a:1 == "ad"
+    cd $HOME/Projects/AppDirect/appdirect-parent/appdirect/
+  elseif a:1 == "uif"
+    cd $HOME/Projects/uif-sass/
+  elseif a:1 == "kraken"
+    cd $HOME/Projects/frontend-components/
+  endif
+
+  e .
 endfunction
 
 " ====================
