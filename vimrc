@@ -193,6 +193,7 @@ function! Preserve(command)
 endfunction
 
 " Toggle spell/wrap/linebreak
+command! -nargs=* WordSmith call WordSmith()
 function! WordSmith()
     set wrap!
     set linebreak!
@@ -264,6 +265,7 @@ function! ADDaily()
   let l:path = "$HOME/Documents/AppDirect/daily-standups/" . strftime("%Y-%m-%d") . ".md"
   execute 'edit' l:path
 endfunction
+
 " ====================
 " INSERT MODE MAPPINGS
 " ====================
