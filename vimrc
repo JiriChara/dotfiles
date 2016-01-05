@@ -317,6 +317,10 @@ nnoremap <leader>0 :10b<CR>
 
 nnoremap <leader>h :noh<CR>
 
+" Preview markdown
+map <leader>mh :!markdown % \|bcat<CR>
+map <leader>mm :!ronn -5 --pipe % \|bcat<CR>
+
 nnoremap j gj
 nnoremap k gk
 
