@@ -258,6 +258,12 @@ function! ADRush(...)
   e .
 endfunction
 
+" AppDirect daily time
+command! -nargs=* ADDaily call ADDaily(<f-args>)
+function! ADDaily()
+  let l:path = "$HOME/Documents/AppDirect/daily-standups/" . strftime("%Y-%m-%d") . ".md"
+  execute 'edit' l:path
+endfunction
 " ====================
 " INSERT MODE MAPPINGS
 " ====================
