@@ -1,9 +1,16 @@
 export EDITOR="vim"
 export TERM="xterm-256color"
 export TERMINAL="uxterm"
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+export M2_HOME=/usr/local/apache-maven
+export GRAILS_HOME=/opt/grails-2.4.3
 
 PATH=$PATH:/opt/copy/x86_64/
+PATH=$PATH:/opt/dropbox/
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$M2_HOME/bin # Maven
+PATH=$PATH:$HOME/.fzf/bin
+PATH=$PATH:$GRAILS_HOME/bin
 
 export PATH
 
@@ -11,4 +18,11 @@ export FZF_DEFAULT_COMMAND='
   (git ls-tree -r --name-only HEAD ||
    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
       sed s/^..//) 2> /dev/null'
+
+
 dot=$HOME/bin/dotfiles/
+jch=$HOME/Projects/jiri.chara.blog/
+ad=$HOME/Projects/AppDirect/appdirect-parent/appdirect
+kraken=$HOME/Projects/frontend-components
+kindergarten=$HOME/Projects/kindergarten
+uif=$HOME/Projects/uif-sass
