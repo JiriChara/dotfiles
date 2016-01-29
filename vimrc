@@ -57,6 +57,7 @@ let g:ragtag_global_maps = 1
 let g:EasyMotion_leader_key = '<space>'
 
 let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 0
 let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss', 'java'] }
 " let g:syntastic_javascript_checkers = ['jsxhint', 'jscs']
 let g:syntastic_javascript_checkers = ['eslint']
@@ -350,3 +351,18 @@ vmap <expr> <c-h> DVB_Drag('left')
 vmap <expr> <c-l> DVB_Drag('right')
 vmap <expr> <c-j> DVB_Drag('down')
 vmap <expr> <c-k> DVB_Drag('up')
+
+" =====================
+" COMMAND LINE MAPPINGS
+" =====================
+cnoremap <C-a> <Home>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-d> <Delete>
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
+cnoremap <M-d> <S-right><Delete>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+cnoremap <Esc>d <S-right><Delete>
+cnoremap <C-g> <C-c>
