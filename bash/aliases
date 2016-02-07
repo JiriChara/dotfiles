@@ -39,3 +39,4 @@ alias v='vim'
 alias psg='ps aux | grep'
 
 alias ccf='xclip -sel clip <'
+alias mvn='mvnDebug'
