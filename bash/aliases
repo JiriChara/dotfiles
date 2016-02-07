@@ -34,9 +34,10 @@ alias gst='git status'
 
 #Vim
 alias vi='vim'
-alias v='vim'
+alias v='nvim'
 
 alias psg='ps aux | grep'
 
 alias ccf='xclip -sel clip <'
+
 alias mvn='mvnDebug'
