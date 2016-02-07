@@ -38,6 +38,11 @@ task :install do
       link_file(file, file_path)
     end
   end
+
+  # Symlink neovim configs
+  system %Q{mkdir -p $HOME/.config}
+  system %Q{ln -s $HOME/.nvim $HOME/.config/nvim}
+  system %Q{ln -s $HOME/.nvimrc $HOME/.config/nvimrc}
 end
 
 def replace_file(file, file_path)
