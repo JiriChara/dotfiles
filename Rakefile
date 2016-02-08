@@ -40,9 +40,22 @@ task :install do
   end
 
   # Symlink neovim configs
-  system %Q{mkdir -p $HOME/.config}
-  system %Q{ln -s $HOME/.nvim $HOME/.config/nvim}
-  system %Q{ln -s $HOME/.nvimrc $HOME/.config/nvimrc}
+  home = ENV['HOME']
+  config_path = File.join(home, '.config')
+  nvim_path = File.join(home, '.config/nvim')
+  nvimrc_path = File.join(home , '.config/nvimrc')
+
+  if !File.exists?(config_path)
+    system %Q{mkdir -p #{config_path}}
+  end
+
+  if !File.exists?(nvim_path)
+    system %Q{ln -s #{File.join(home, '.nvim')} #{nvim_path}}
+  end
+
+  if !File.exists?(nvimrc_path)
+    system %Q{ln -s #{File.join(home, '.nvimrc')} #{nvimrc_path}}
+  end
 end
 
 def replace_file(file, file_path)
