@@ -17,6 +17,11 @@ let maplocalleader = "\\"
 " deoplete configuration
 let g:deoplete#enable_at_startup = 1
 
+" Airline
+let g:airline_theme= 'solarized'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 0
+
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -33,7 +38,6 @@ endif
 " set encoding=utf-8
 
 set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
 set showmode
 set showmatch
@@ -79,6 +83,8 @@ set listchars=tab:▸\ ,eol:¬
 " Tabs and Spaces
 set backspace=2
 set ts=2 sts=2 sw=2 expandtab
+
+set t_Co=256
 
 set rtp+=~/.fzf
 
@@ -328,3 +334,6 @@ cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
 cnoremap <C-g> <C-c>
+
+" Open file in current folder
+cabbr <expr> %% expand('%:p:h')

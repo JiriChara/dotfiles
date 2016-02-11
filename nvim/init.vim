@@ -32,6 +32,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
     Plug 'benekastah/neomake'
     Plug 'junegunn/vim-plug'
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'thinca/vim-localrc'
     Plug 'Shougo/deoplete.nvim'
 call plug#end()
