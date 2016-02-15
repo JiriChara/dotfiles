@@ -1,7 +1,7 @@
-xchat2/scrollback/*
 vim/backup/*
 vim/tmp/*
 vim/.netrwhist
+nvim/.init.vim-rplugin~
 mutt/cache/
 mutt/cache/**/*
 mutt/aliases
