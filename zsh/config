@@ -69,8 +69,5 @@ WORDCHARS=${WORDCHARS//[&=\/;\!#%\{]}
 
 bindkey -e
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Auto CD
 setopt autocd

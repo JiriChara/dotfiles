@@ -7,10 +7,10 @@ export GRAILS_HOME=/opt/grails-2.4.3
 
 PATH=$PATH:/opt/copy/x86_64/
 PATH=$PATH:/opt/dropbox/
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$M2_HOME/bin # Maven
 PATH=$PATH:$HOME/.fzf/bin
 PATH=$PATH:$GRAILS_HOME/bin
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export PATH
 
