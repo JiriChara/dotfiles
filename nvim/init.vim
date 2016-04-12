@@ -33,6 +33,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'thinca/vim-localrc'
   Plug 'Shougo/deoplete.nvim'
   Plug 'godlygeek/tabular'
+  Plug 'SirVer/ultisnips'
 call plug#end()
 
 source $HOME/.config/nvimrc
