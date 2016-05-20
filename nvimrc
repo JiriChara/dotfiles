@@ -35,6 +35,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 autocmd! BufWritePost * Neomake
 
+" Disable for Java
+let g:neomake_java_javac_maker = 0
+
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
