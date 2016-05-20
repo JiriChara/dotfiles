@@ -18,6 +18,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'tpope/vim-eunuch'
   Plug 'mileszs/ack.vim'
   Plug 'pangloss/vim-javascript'
+  Plug 'mxw/vim-jsx'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'tpope/vim-projectionist'
   Plug 'mattn/webapi-vim'

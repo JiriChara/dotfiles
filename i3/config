@@ -89,7 +89,7 @@ bindsym $mod+a focus parent
 # workspace definitions
 set $ws1 1: terminals
 set $ws2 2: editor
-set $ws3 3: logs
+set $ws3 3: irc
 set $ws4 4: browser
 set $ws5 5: mail
 set $ws6 6: chat
