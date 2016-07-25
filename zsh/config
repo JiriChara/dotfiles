@@ -69,5 +69,7 @@ WORDCHARS=${WORDCHARS//[&=\/;\!#%\{]}
 
 bindkey -e
 
+bindkey "\e[3~" delete-char
+
 # Auto CD
 setopt autocd
