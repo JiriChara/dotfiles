@@ -10,12 +10,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-#ls
+# ls
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-#cd
+# cd
 alias ..='cd ..'
 alias cdd='cd -'
 
@@ -23,16 +23,16 @@ alias cdd='cd -'
 alias reload='source ~/bin/dotfiles/bash/aliases'
 alias ea='vim ~/bin/dotfiles/bash/aliases && reload'
 
-#Rails
+# Rails
 alias be='bundle exec'
 alias rspec='be rspec -c'
 alias rails='be rails'
 alias rake='be rake'
 
-#Git
+# Git
 alias gst='git status'
 
-#Vim
+# Vim
 alias vi='vim'
 alias v='nvim'
 
@@ -41,3 +41,15 @@ alias psg='ps aux | grep'
 alias ccf='xclip -sel clip <'
 
 alias mvn='mvnDebug'
+
+
+dot=$HOME/bin/dotfiles
+jch=$HOME/Projects/jiri.chara.blog
+kindergarten=$HOME/Projects/kindergarten
+blower=$HOME/Projects/redux-blower
+
+# AppDirect
+ad=$HOME/Projects/AppDirect/appdirect-parent/appdirect
+kraken=$HOME/Projects/frontend-components
+uif=$HOME/Projects/uif-sass
+customizer=$HOME/Projects/customizer-themes
