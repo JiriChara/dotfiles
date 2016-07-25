@@ -122,3 +122,6 @@ UXTerm*color14:               S_base1
 !! white dark/light
 UXTerm*color7:                S_base2
 UXTerm*color15:               S_base3
+
+!! enable login shell
+xterm*loginShell: true
