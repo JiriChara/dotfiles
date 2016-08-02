@@ -1,6 +1,7 @@
 [user]
   name = Jiri Chara
   email = me@jirichara.com
+	signingkey = 5BEC11845A88D248
 [github]
   user = JiriChara
 [color]
@@ -27,3 +28,5 @@
 	enabled = true
 [status]
 	showUntrackedFiles = all
+[commit]
+	gpgsign = true
