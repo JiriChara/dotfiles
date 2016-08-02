@@ -1,7 +1,7 @@
 [user]
   name = Jiri Chara
-  email = me@jirichara.com
-	signingkey = 5BEC11845A88D248
+  email = jiri@chara.vip
+	signingkey = jiri@chara.vip
 [github]
   user = JiriChara
 [color]
