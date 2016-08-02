@@ -47,6 +47,7 @@ dot=$HOME/bin/dotfiles
 jch=$HOME/Projects/jiri.chara.blog
 kindergarten=$HOME/Projects/kindergarten
 blower=$HOME/Projects/redux-blower
+mower=$HOME/Projects/mower
 
 # AppDirect
 ad=$HOME/Projects/AppDirect/appdirect-parent/appdirect
