@@ -1,4 +1,12 @@
 call plug#begin('$HOME/.config/nvim/bundle')
+  " Unite + Plugins
+  Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+  Plug 'Shougo/unite.vim'
+  Plug 'lambdalisue/unite-grep-vcs'
+  Plug 'Shougo/neomru.vim'
+  Plug 'Shougo/unite-outline'
+  Plug 'tsukkee/unite-tag'
+
   Plug 'vim-scripts/TailMinusF'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
