@@ -44,13 +44,12 @@ alias mvn='mvnDebug'
 
 
 dot=$HOME/bin/dotfiles
-jch=$HOME/Projects/jiri.chara.blog
+jch=$HOME/Projects/chara.vip
 kindergarten=$HOME/Projects/kindergarten
 blower=$HOME/Projects/redux-blower
-mower=$HOME/Projects/mower
 
 # AppDirect
 ad=$HOME/Projects/AppDirect/appdirect-parent/appdirect
 kraken=$HOME/Projects/frontend-components
 uif=$HOME/Projects/uif-sass
-customizer=$HOME/Projects/customizer-themes
+customizerthemes=$HOME/Projects/customizer-themes
