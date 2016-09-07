@@ -6,7 +6,6 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'Shougo/neomru.vim'
   Plug 'Shougo/unite-outline'
   Plug 'tsukkee/unite-tag'
-
   Plug 'vim-scripts/TailMinusF'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
@@ -33,14 +32,15 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'Rykka/colorv.vim'
   Plug 'mxw/vim-jsx'
   Plug 'JiriChara/dragvisuals.vim'
-  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'altercation/vim-colors-solarized'
   Plug 'benekastah/neomake'
+  Plug 'benjie/neomake-local-eslint.vim'
   Plug 'junegunn/vim-plug'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'thinca/vim-localrc'
-  Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'godlygeek/tabular'
   Plug 'SirVer/ultisnips'
 call plug#end()
