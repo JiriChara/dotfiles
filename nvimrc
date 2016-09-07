@@ -37,6 +37,9 @@ elseif executable('ack')
   let g:unite_source_grep_recursive_opt=''
 endif
 
+" Enable jsx for *.js files
+let g:jsx_ext_required = 0
+
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
