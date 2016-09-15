@@ -40,6 +40,10 @@ endif
 " Enable jsx for *.js files
 let g:jsx_ext_required = 0
 
+" Calendar
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -51,6 +55,7 @@ autocmd! BufWritePost * Neomake
 
 " Disable for Java
 let g:neomake_java_javac_maker = 0
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
