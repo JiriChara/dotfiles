@@ -33,7 +33,6 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'mxw/vim-jsx'
   Plug 'JiriChara/dragvisuals.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'altercation/vim-colors-solarized'
   Plug 'benekastah/neomake'
   Plug 'benjie/neomake-local-eslint.vim'
   Plug 'junegunn/vim-plug'
@@ -44,6 +43,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'godlygeek/tabular'
   Plug 'SirVer/ultisnips'
   Plug 'itchyny/calendar.vim'
+  Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 source $HOME/.config/nvimrc
