@@ -42,6 +42,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'godlygeek/tabular'
   Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
   Plug 'itchyny/calendar.vim'
   Plug 'altercation/vim-colors-solarized'
 call plug#end()
