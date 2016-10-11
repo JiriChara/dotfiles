@@ -43,6 +43,8 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'godlygeek/tabular'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
+  Plug 'epilande/vim-es2015-snippets'
+  Plug 'epilande/vim-react-snippets'
   Plug 'itchyny/calendar.vim'
   Plug 'altercation/vim-colors-solarized'
 call plug#end()
