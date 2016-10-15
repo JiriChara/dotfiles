@@ -47,6 +47,7 @@ dot=$HOME/bin/dotfiles
 jch=$HOME/Projects/chara.vip
 kindergarten=$HOME/Projects/kindergarten
 blower=$HOME/Projects/redux-blower
+krtek=$HOME/Projects/krtek
 
 # AppDirect
 ad=$HOME/Projects/AppDirect/appdirect-parent/appdirect
