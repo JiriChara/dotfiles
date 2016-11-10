@@ -99,6 +99,8 @@ set mouse=a
 
 set visualbell
 
+set inccommand=split
+
 set background=dark
 colorscheme solarized
 
