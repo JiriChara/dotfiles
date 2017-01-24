@@ -26,11 +26,11 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'mileszs/ack.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
+  Plug 'posva/vim-vue'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'tpope/vim-projectionist'
   Plug 'mattn/webapi-vim'
   Plug 'Rykka/colorv.vim'
-  Plug 'mxw/vim-jsx'
   Plug 'JiriChara/dragvisuals.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'benekastah/neomake'
