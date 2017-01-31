@@ -61,6 +61,9 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
+let g:tern#filetypes = ['jsx', 'vue', 'js']
+autocmd CompleteDone * pclose
+
 " set encoding=utf-8
 
 set laststatus=2
@@ -315,8 +318,6 @@ nnoremap <leader>h :noh<CR>
 " Preview markdown
 map <leader>mh :!markdown % \|bcat<CR>
 map <leader>mm :!ronn -5 --pipe % \|bcat<CR>
-
-map <leader>ss :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 nnoremap j gj
 nnoremap k gk

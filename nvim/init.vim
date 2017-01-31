@@ -40,6 +40,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'thinca/vim-localrc'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'godlygeek/tabular'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
