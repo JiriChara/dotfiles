@@ -16,6 +16,12 @@ let maplocalleader = "\\"
 
 " deoplete configuration
 let g:deoplete#enable_at_startup = 1
+set completeopt-=preview
+
+let g:tern#filetypes = ['jsx', 'vue', 'js']
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = 1
+autocmd CompleteDone * pclose
 
 " Airline
 let g:airline_theme= 'solarized'
