@@ -26,7 +26,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'mileszs/ack.vim'
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
-  Plug 'posva/vim-vue'
+  Plug 'posva/vim-vue', { 'for': 'vue' }
   Plug 'Lokaltog/vim-easymotion'
   Plug 'tpope/vim-projectionist'
   Plug 'mattn/webapi-vim'
@@ -46,7 +46,6 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'honza/vim-snippets'
   Plug 'epilande/vim-es2015-snippets'
   Plug 'epilande/vim-react-snippets'
-  Plug 'itchyny/calendar.vim'
   Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
