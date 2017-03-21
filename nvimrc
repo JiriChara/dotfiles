@@ -265,8 +265,7 @@ endfunction
 " INSERT MODE MAPPINGS
 " ====================
 
-" jk         : Esc
-inoremap jk <Esc>
+" ...
 
 " ====================
 " NORMAL MODE MAPPINGS

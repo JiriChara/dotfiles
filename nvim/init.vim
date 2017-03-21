@@ -1,5 +1,4 @@
 call plug#begin('$HOME/.config/nvim/bundle')
-  " Unite + Plugins
   Plug 'Shougo/vimproc.vim', {'do' : 'make'}
   Plug 'Shougo/unite.vim'
   Plug 'lambdalisue/unite-grep-vcs'
