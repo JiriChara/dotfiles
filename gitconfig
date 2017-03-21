@@ -1,7 +1,7 @@
 [user]
   name = Jiri Chara
   email = jiri@chara.vip
-	signingkey = jiri@chara.vip
+  signingkey = jiri@chara.vip
 [github]
   user = JiriChara
 [color]
@@ -23,10 +23,12 @@
   int = merge --no-ff
   edit = !vim `git ls-files -m` -p
 [push]
-	default = simple
+  default = simple
 [rerere]
-	enabled = true
+  enabled = true
 [status]
-	showUntrackedFiles = all
+  showUntrackedFiles = all
 [commit]
-	gpgsign = true
+  gpgsign = true
+[core]
+	editor = nvim
