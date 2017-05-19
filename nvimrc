@@ -112,6 +112,9 @@ set listchars=tab:▸\ ,eol:¬
 set backspace=2
 set ts=2 sts=2 sw=2 expandtab
 
+set cursorline
+set cursorcolumn
+
 set t_Co=256
 
 set rtp+=~/.fzf
@@ -121,7 +124,7 @@ if has("autocmd")
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 
-  autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
