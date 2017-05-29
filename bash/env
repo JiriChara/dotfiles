@@ -4,9 +4,11 @@ export TERMINAL="uxterm"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 export M2_HOME=/usr/local/apache-maven
 export GRAILS_HOME=/opt/grails-2.4.3
+export COLORTERM=gnome-terminal
 
 PATH=$PATH:/opt/copy/x86_64/
 PATH=$PATH:/opt/dropbox/
+PATH=$PATH:/opt/telegram/
 PATH=$PATH:$M2_HOME/bin # Maven
 PATH=$PATH:$HOME/.fzf/bin
 PATH=$PATH:$GRAILS_HOME/bin
