@@ -18,6 +18,8 @@ let maplocalleader = "\\"
 let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
 
+let g:jsx_ext_required = 0
+
 let g:tern#filetypes = ['jsx', 'vue', 'js']
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 1
@@ -61,7 +63,7 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 
-" set encoding=utf-8
+set encoding=utf-8
 
 set laststatus=2
 set showcmd
@@ -133,10 +135,10 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 
   autocmd BufNewFile,BufRead *.min.js set syntax=off
-endif
 
-" Fugitive
-autocmd BufReadPost fugitive://* set bufhidden=delete
+  " Fugitive
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+endif
 
 "NERD Tree
 " open NERDTree everytime VIM is opened and no files selected
