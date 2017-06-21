@@ -33,8 +33,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'Rykka/colorv.vim'
   Plug 'JiriChara/dragvisuals.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'benekastah/neomake'
-  Plug 'benjie/neomake-local-eslint.vim'
+  Plug 'w0rp/ale'
   Plug 'junegunn/vim-plug'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'

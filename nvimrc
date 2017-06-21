@@ -52,12 +52,13 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" Neomake settings
-autocmd! BufWritePost * Neomake
-" Disable for Java
-let g:neomake_java_javac_maker = 0
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_vue_enabled_makers = ['eslint']
+" Ale settings
+nmap <F8> <Plug>(ale_fix)
+let g:ale_fixers = {
+\   'javascript': [
+\       'eslint',
+\   ]
+\}
 
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
