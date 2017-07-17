@@ -47,6 +47,7 @@ dot=$HOME/bin/dotfiles
 jch=$HOME/Projects/chara.vip
 kindergarten=$HOME/Projects/kindergarten
 vk=$HOME/Projects/vue-kindergarten
+vc=$HOME/Projects/vuex-crud
 blower=$HOME/Projects/redux-blower
 krtek=$HOME/Projects/krtek
 
