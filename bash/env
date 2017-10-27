@@ -11,6 +11,7 @@ PATH=$PATH:/opt/copy/x86_64
 PATH=$PATH:/opt/dropbox
 PATH=$PATH:/opt/telegram
 PATH=$PATH:/opt/gradle/gradle-4.2.1/bin
+PATH=$PATH:/opt/robo3t-1.1.1-linux-x86_64-c93c6b0/bin
 PATH=$PATH:$M2_HOME/bin # Maven
 PATH=$PATH:$HOME/.fzf/bin
 PATH=$PATH:$GRAILS_HOME/bin
