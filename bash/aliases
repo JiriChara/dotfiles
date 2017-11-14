@@ -45,6 +45,7 @@ alias mvn='mvnDebug'
 
 dot=$HOME/bin/dotfiles
 jch=$HOME/Projects/chara.vip
+j=$HOME/Projects/jch
 kindergarten=$HOME/Projects/kindergarten
 vk=$HOME/Projects/vue-kindergarten
 vc=$HOME/Projects/vuex-crud

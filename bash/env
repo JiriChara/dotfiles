@@ -6,6 +6,7 @@ export M2_HOME=/usr/local/apache-maven
 export GRAILS_HOME=/opt/grails-2.4.3
 export COLORTERM=gnome-terminal
 export GOPATH=$HOME/go
+export AD_HOME=$HOME/Projects/AppDirect
 
 PATH=$PATH:/opt/copy/x86_64
 PATH=$PATH:/opt/dropbox
