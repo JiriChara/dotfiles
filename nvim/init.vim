@@ -16,6 +16,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'tpope/vim-rvm'
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-ragtag'
   Plug 'tpope/vim-markdown'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-commentary'
