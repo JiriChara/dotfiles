@@ -8,6 +8,7 @@ export COLORTERM=gnome-terminal
 export GOPATH=$HOME/go
 export AD_HOME=$HOME/Projects/AppDirect
 
+PATH=$PATH:/usr/local/bin
 PATH=$PATH:/opt/copy/x86_64
 PATH=$PATH:/opt/dropbox
 PATH=$PATH:/opt/telegram
