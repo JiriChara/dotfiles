@@ -8,3 +8,4 @@ export NVM_DIR="/home/jiri/.nvm"
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

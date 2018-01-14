@@ -125,3 +125,5 @@ UXTerm*color15:               S_base3
 
 !! enable login shell
 xterm*loginShell: true
+
+Xft.dpi: 150
