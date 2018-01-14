@@ -40,23 +40,11 @@ alias psg='ps aux | grep'
 
 alias ccf='xclip -sel clip <'
 
-alias mvn='mvnDebug'
-
-
 dot=$HOME/bin/dotfiles
-jch=$HOME/Projects/chara.vip
 jfe=$HOME/Projects/jch-fe
 jbe=$HOME/Projects/jch-be
 kindergarten=$HOME/Projects/kindergarten
 vk=$HOME/Projects/vue-kindergarten
 vc=$HOME/Projects/vuex-crud
-blower=$HOME/Projects/redux-blower
-krtek=$HOME/Projects/krtek
-
-# AppDirect
-ad=$HOME/Projects/AppDirect/appdirect-parent/appdirect
-kraken=$HOME/Projects/frontend-components
-uif=$HOME/Projects/uif-sass
-customizerthemes=$HOME/Projects/customizer-themes
-is=$HOME/Projects/invoice-service
-ac=$HOME/Projects/appdirect-cms
+todofe=$HOME/Projects/todo-rpg-fe
+todobe=$HOME/Projects/todo-rpg-be
