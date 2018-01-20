@@ -17,8 +17,9 @@ PATH=$PATH:/opt/robo3t-1.1.1-linux-x86_64-c93c6b0/bin
 PATH=$PATH:$M2_HOME/bin # Maven
 PATH=$PATH:$HOME/.fzf/bin
 PATH=$PATH:$GRAILS_HOME/bin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$HOME/.rbenv/bin
+PATH=$PATH:$HOME/.rbenv/plugins/ruby-build/bin
 
 export PATH
 
@@ -26,6 +27,3 @@ export FZF_DEFAULT_COMMAND='
   ({ git ls-files -m -c & git ls-files -o --exclude-standard; }  ||
    find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
       sed s/^..//) | sort | uniq 2> /dev/null'
-
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

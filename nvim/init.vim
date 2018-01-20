@@ -13,7 +13,6 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-rake'
   Plug 'tpope/vim-abolish'
-  Plug 'tpope/vim-rvm'
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-ragtag'
