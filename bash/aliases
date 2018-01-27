@@ -43,6 +43,7 @@ alias ccf='xclip -sel clip <'
 dot=$HOME/bin/dotfiles
 jfe=$HOME/Projects/jch-fe
 jbe=$HOME/Projects/jch-be
+jdocker=$HOME/Projects/jch-docker
 kindergarten=$HOME/Projects/kindergarten
 vk=$HOME/Projects/vue-kindergarten
 vc=$HOME/Projects/vuex-crud
