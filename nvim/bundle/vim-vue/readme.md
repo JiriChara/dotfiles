@@ -33,7 +33,8 @@ git clone https://github.com/posva/vim-vue.git ~/.vim/pack/plugins/start/vim-vue
 
 Currently only `eslint` is available. Please make sure
 [eslint](http://eslint.org/) and
-[eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue) are installed:
+[eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue) are installed
+and properly [configured](https://github.com/vuejs/eslint-plugin-vue#rocket-usage):
 
 ```bash
 npm i -g eslint eslint-plugin-vue
@@ -94,7 +95,13 @@ autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 :warning: This may cause problems, because some plugins will then treat the
 whole buffer as html/javascript/css instead of only the part inside the tags.
 
-### How can I use NERDCommenter in Vue files?
+### How to use commenting functionality with multiple languages in Vue files?
+
+#### caw.vim
+
+caw.vim features built-in support for file context through [context_filetype.vim](https://github.com/Shougo/context_filetype.vim). Just install both plugins and context-aware commenting will work in most files. The fenced code is detected by predefined regular expressions.
+
+#### NERDCommenter
 
 <details>
 <summary>
@@ -128,4 +135,4 @@ endfunction
 
 ### _Vim gets slows down when using this plugin_ How can I fix that?
 
-Add `let g:vue_disable_pre_processors=1` in your .vimrc to disable checking for prepocessors. When checking for preprocessor languages, multiple syntax highlighting checks are done, which can slow down vim. This variable prevents vim-vue from supporting **every** prepocessor language highlighting.
+Add `let g:vue_disable_pre_processors=1` in your .vimrc to disable checking for prepocessors. When checking for preprocessor languages, multiple syntax highlighting checks are done, which can slow down vim. This variable prevents vim-vue from supporting **every** pre-processor language highlighting.
