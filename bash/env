@@ -1,23 +1,10 @@
 export EDITOR="vim"
 export TERM="xterm-256color"
 export TERMINAL="uxterm"
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
-export M2_HOME=/usr/local/apache-maven
-export GRAILS_HOME=/opt/grails-2.4.3
 export COLORTERM=gnome-terminal
-export GOPATH=$HOME/go
-export AD_HOME=$HOME/Projects/AppDirect
 
 PATH=$PATH:/usr/local/bin
-PATH=$PATH:/opt/copy/x86_64
-PATH=$PATH:/opt/dropbox
-PATH=$PATH:/opt/telegram
-PATH=$PATH:/opt/gradle/gradle-4.2.1/bin
-PATH=$PATH:/opt/robo3t-1.1.1-linux-x86_64-c93c6b0/bin
-PATH=$PATH:$M2_HOME/bin # Maven
 PATH=$PATH:$HOME/.fzf/bin
-PATH=$PATH:$GRAILS_HOME/bin
-PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/.rbenv/bin
 PATH=$PATH:$HOME/.rbenv/plugins/ruby-build/bin
 
