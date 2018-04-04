@@ -49,3 +49,8 @@ vk=$HOME/Projects/vue-kindergarten
 vc=$HOME/Projects/vuex-crud
 todofe=$HOME/Projects/todo-rpg-fe
 todobe=$HOME/Projects/todo-rpg-be
+
+# xbAV
+xd=$HOME/Projects/xbav/direkt
+xfe=$HOME/Projects/xbav/xbav-frontend
+xshr=$HOME/Projects/xbav/xbav-shared
