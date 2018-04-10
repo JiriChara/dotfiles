@@ -32,7 +32,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'mattn/webapi-vim'
   Plug 'Rykka/colorv.vim'
   Plug 'JiriChara/dragvisuals.vim'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'w0rp/ale'
   Plug 'junegunn/vim-plug'
   Plug 'vim-airline/vim-airline'

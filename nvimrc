@@ -52,6 +52,8 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+autocmd Filetype javascript if getfsize(@%) > 500 | setlocal syntax=OFF | endif
+
 " Ale settings
 nmap <F8> <Plug>(ale_fix)
 let g:ale_fixers = {
