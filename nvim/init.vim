@@ -46,6 +46,9 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'epilande/vim-es2015-snippets'
   Plug 'epilande/vim-react-snippets'
   Plug 'altercation/vim-colors-solarized'
+  Plug 'wavded/vim-stylus'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'Quramy/tsuquyomi'
 call plug#end()
 
 source $HOME/.config/nvimrc

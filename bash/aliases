@@ -52,7 +52,7 @@ todobe=$HOME/Projects/todo-rpg-be
 
 # xbAV
 xd=$HOME/Projects/xbav/direkt
-xfe=$HOME/Projects/xbav/xbav-frontend
+xfe=$HOME/Projects/xbav/xbav-front-end
 xshr=$HOME/Projects/xbav/xbav-shared
 xow=$HOME/Projects/xbav/order-wizard
 xs=$HOME/Projects/xbav/xbav-smaug
