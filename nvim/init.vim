@@ -49,6 +49,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'wavded/vim-stylus'
   Plug 'leafgarland/typescript-vim'
   Plug 'Quramy/tsuquyomi'
+  Plug 'slim-template/vim-slim'
 call plug#end()
 
 source $HOME/.config/nvimrc
