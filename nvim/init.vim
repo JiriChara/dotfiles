@@ -50,6 +50,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'leafgarland/typescript-vim'
   Plug 'Quramy/tsuquyomi'
   Plug 'slim-template/vim-slim'
+  Plug 'lambdalisue/suda.vim'
 call plug#end()
 
 source $HOME/.config/nvimrc
