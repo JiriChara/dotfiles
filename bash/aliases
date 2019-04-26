@@ -41,18 +41,12 @@ alias psg='ps aux | grep'
 alias ccf='xclip -sel clip <'
 
 dot=$HOME/bin/dotfiles
-jfe=$HOME/Projects/jch-fe
-jbe=$HOME/Projects/jch-be
-jdocker=$HOME/Projects/jch-docker
+j=$HOME/Projects/chara.vip
 kindergarten=$HOME/Projects/kindergarten
 vk=$HOME/Projects/vue-kindergarten
 vc=$HOME/Projects/vuex-crud
-todofe=$HOME/Projects/todo-rpg-fe
-todobe=$HOME/Projects/todo-rpg-be
 
 # xbAV
 xd=$HOME/Projects/xbav/direkt
-xfe=$HOME/Projects/xbav/xbav-front-end
-xshr=$HOME/Projects/xbav/xbav-shared
 xow=$HOME/Projects/xbav/order-wizard
 xs=$HOME/Projects/xbav/xbav-smaug
