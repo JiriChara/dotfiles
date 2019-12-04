@@ -48,5 +48,6 @@ vc=$HOME/Projects/vuex-crud
 
 # xbAV
 xd=$HOME/Projects/xbav/direkt
+xm=$HOME/Projects/xbav/manager
 xow=$HOME/Projects/xbav/order-wizard
 xs=$HOME/Projects/xbav/xbav-smaug
