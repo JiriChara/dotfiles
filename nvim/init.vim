@@ -30,7 +30,6 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'Lokaltog/vim-easymotion'
   Plug 'tpope/vim-projectionist'
   Plug 'mattn/webapi-vim'
-  Plug 'Rykka/colorv.vim'
   Plug 'JiriChara/dragvisuals.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'w0rp/ale'
