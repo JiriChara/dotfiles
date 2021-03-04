@@ -144,10 +144,6 @@ if has("autocmd")
 endif
 
 "NERD Tree
-" open NERDTree everytime VIM is opened and no files selected
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" map <C-n> to toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 if has("autocmd")
