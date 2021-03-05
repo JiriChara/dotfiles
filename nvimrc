@@ -144,7 +144,7 @@ if has("autocmd")
 endif
 
 "NERD Tree
-map <C-n> :NERDTreeToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 
 if has("autocmd")
   filetype plugin indent on
@@ -295,9 +295,6 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-p> :FZF<CR>
 
 " Mappings to access buffers
-" \ll         : list buffers
-" \b \f \g    : go back/forward/last-used
-" \1 \2 \3    : go to buffer 1/2/3 etc..
 nnoremap <leader>ll :ls<CR>
 nnoremap <leader>b :bp<CR>
 nnoremap <leader>f :bn<CR>
