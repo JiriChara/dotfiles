@@ -20,7 +20,7 @@ set completeopt-=preview
 
 let g:jsx_ext_required = 0
 
-let g:tern#filetypes = ['jsx', 'vue', 'js']
+let g:tern#filetypes = ['jsx', 'vue', 'js', 'tsx']
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 1
 autocmd CompleteDone * pclose
@@ -138,6 +138,8 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 
   autocmd BufNewFile,BufRead *.min.js set syntax=off
+
+  autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
   " Fugitive
   autocmd BufReadPost fugitive://* set bufhidden=delete

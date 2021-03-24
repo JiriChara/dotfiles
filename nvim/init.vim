@@ -47,6 +47,7 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'altercation/vim-colors-solarized'
   Plug 'wavded/vim-stylus'
   Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
   Plug 'Quramy/tsuquyomi'
   Plug 'slim-template/vim-slim'
   Plug 'lambdalisue/suda.vim'
