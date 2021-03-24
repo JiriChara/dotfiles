@@ -15,6 +15,7 @@
   untracked = red
 [alias]
   co = checkout
+  rs = restore --staged
   puhs = push
   br = branch
   st = status -s
