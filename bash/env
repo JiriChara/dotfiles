@@ -2,6 +2,8 @@ export EDITOR="vim"
 export TERM="xterm-256color"
 export TERMINAL="uxterm"
 export COLORTERM=gnome-terminal
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/pulse/extra/usr/lib/x86_64-linux-gnu/
+export GPG_TTY=$(tty)
 
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:$HOME/.fzf/bin

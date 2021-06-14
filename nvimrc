@@ -59,7 +59,7 @@ nmap <F8> <Plug>(ale_fix)
 let g:ale_fixers = {
 \   'javascript': [
 \       'eslint',
-\   ]
+\   ],
 \}
 
 if !exists('g:neocomplete#sources#omni#input_patterns')
