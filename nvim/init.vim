@@ -24,11 +24,9 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'vim-ruby/vim-ruby'
   Plug 'tpope/vim-eunuch'
   Plug 'mileszs/ack.vim'
-  Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
   Plug 'posva/vim-vue', { 'for': 'vue' }
   Plug 'Lokaltog/vim-easymotion'
-  Plug 'tpope/vim-projectionist'
   Plug 'mattn/webapi-vim'
   Plug 'JiriChara/dragvisuals.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -46,11 +44,16 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'epilande/vim-react-snippets'
   Plug 'altercation/vim-colors-solarized'
   Plug 'wavded/vim-stylus'
-  Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
-  Plug 'Quramy/tsuquyomi'
   Plug 'slim-template/vim-slim'
   Plug 'lambdalisue/suda.vim'
+
+  " JS / TS
+  Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
+  Plug 'jason0x43/vim-js-indent'
+  Plug 'Quramy/vim-js-pretty-template'
 call plug#end()
 
 source $HOME/.config/nvimrc
