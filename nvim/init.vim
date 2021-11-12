@@ -52,8 +52,8 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'Quramy/vim-js-pretty-template'
   Plug 'jason0x43/vim-js-indent'
   Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
-  " Plug 'pangloss/vim-javascript'
-  " Plug 'peitalin/vim-jsx-typescript'
+  Plug 'pangloss/vim-javascript'
+  Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 source $HOME/.config/nvimrc
