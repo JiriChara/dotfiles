@@ -25,7 +25,6 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'tpope/vim-eunuch'
   Plug 'mileszs/ack.vim'
   Plug 'mxw/vim-jsx'
-  Plug 'posva/vim-vue', { 'for': 'vue' }
   Plug 'Lokaltog/vim-easymotion'
   Plug 'mattn/webapi-vim'
   Plug 'JiriChara/dragvisuals.vim'
