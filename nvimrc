@@ -107,7 +107,7 @@ set visualbell
 set inccommand=split
 
 set background=dark
-" colorscheme solarized
+colorscheme default
 
 set ttyfast
 
