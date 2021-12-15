@@ -41,10 +41,10 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'honza/vim-snippets'
   Plug 'epilande/vim-es2015-snippets'
   Plug 'epilande/vim-react-snippets'
-  Plug 'altercation/vim-colors-solarized'
   Plug 'wavded/vim-stylus'
   Plug 'slim-template/vim-slim'
   Plug 'lambdalisue/suda.vim'
+  Plug 'jacoborus/tender.vim'
 
   " JS / TS
   Plug 'leafgarland/typescript-vim'

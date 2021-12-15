@@ -6,6 +6,8 @@ endif
 runtime! debian.vim
 runtime! macros/matchit.vim
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 let g:ragtag_global_maps = 1
 let g:EasyMotion_leader_key = '<space>'
 
@@ -26,7 +28,7 @@ let g:tern_show_signature_in_pum = 1
 autocmd CompleteDone * pclose
 
 " Airline
-let g:airline_theme= 'solarized'
+let g:airline_theme = 'tender'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 0
 
@@ -107,7 +109,7 @@ set visualbell
 set inccommand=split
 
 set background=dark
-colorscheme default
+colorscheme tender
 
 set ttyfast
 
