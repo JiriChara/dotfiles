@@ -1,4 +1,0 @@
-# show old/new/all messages only
-macro index .n "l~N|~O\n"
-macro index .. "l~A\n"
-macro index .f "l~F\n"

@@ -1,6 +1,0 @@
-set from=jirik.chara@gmail.com
-set hostname=gmail.com
-set folder="imaps://jirik.chara@imap.gmail.com/"
-set postponed="=[Gmail]/Koncepty"
-set record="=[Gmail]/Odeslaná pošta"
-set spoolfile="=INBOX"
