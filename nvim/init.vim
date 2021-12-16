@@ -1,10 +1,13 @@
 call plug#begin('$HOME/.config/nvim/bundle')
+  " Plugin management
   Plug 'junegunn/vim-plug'
 
-  "File Navigation
+  " File Navigation
   Plug 'scrooloose/nerdtree'
-  Plug 'tpope/vim-eunuch'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+
+  " Move, Copy, Remove files
+  Plug 'tpope/vim-eunuch'
 
   " Git
   Plug 'tpope/vim-fugitive'
@@ -43,20 +46,17 @@ call plug#begin('$HOME/.config/nvim/bundle')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
-  Plug 'mattn/webapi-vim'
-  Plug 'thinca/vim-localrc'
+  " Text complete
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-  Plug 'godlygeek/tabular'
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " TODO needs some cofiguration
+
+  " Snippets
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
-  Plug 'epilande/vim-es2015-snippets'
-  Plug 'epilande/vim-react-snippets'
-  Plug 'wavded/vim-stylus'
-  Plug 'slim-template/vim-slim'
 
+  " Save as Sudo
   Plug 'lambdalisue/suda.vim'
-  "
+
   " Colorscheme
   Plug 'jacoborus/tender.vim'
 
