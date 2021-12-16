@@ -56,14 +56,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 autocmd Filetype javascript if getfsize(@%) > 500 | setlocal syntax=OFF | endif
 
-" Ale settings
-nmap <F8> <Plug>(ale_fix)
-let g:ale_fixers = {
-\   'javascript': [
-\       'eslint',
-\   ],
-\}
-
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
