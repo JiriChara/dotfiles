@@ -42,9 +42,6 @@ alias ccf='xclip -sel clip <'
 
 dot=$HOME/bin/dotfiles
 j=$HOME/Projects/chara.vip
-kindergarten=$HOME/Projects/kindergarten
-vk=$HOME/Projects/vue-kindergarten
-vc=$HOME/Projects/vuex-crud
 
 # HPE
 pi=$HOME/Projects/private-installer
