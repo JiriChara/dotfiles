@@ -3,62 +3,27 @@ if &t_Co > 2 || has("gui_running")
   syntax on
 endif
 
-runtime! debian.vim
-runtime! macros/matchit.vim
-
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-let g:ragtag_global_maps = 1
+" Easy Motion
 let g:EasyMotion_leader_key = '<space>'
 
-let g:acp_enableAtStartup = 0
-
+" Leader
 let mapleader = "-"
 let maplocalleader = "\\"
 
-" deoplete configuration
+" Deoplete configuration
 let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
-
-let g:jsx_ext_required = 0
-
-let g:tern#filetypes = ['jsx', 'vue', 'js', 'tsx']
-let g:tern_request_timeout = 1
-let g:tern_show_signature_in_pum = 1
-autocmd CompleteDone * pclose
 
 " Airline
 let g:airline_theme = 'tender'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 0
 
 " NeoVim Python
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
-" Unite Configuration
-if executable('ag')
-  let g:unite_source_grep_command='ag'
-  let g:unite_source_grep_default_opts='--nocolor --nogroup --hidden'
-  let g:unite_source_grep_recursive_opt=''
-elseif executable('ack')
-  let g:unite_source_grep_command='ack'
-  let g:unite_source_grep_default_opts='--no-heading --no-color -a'
-  let g:unite_source_grep_recursive_opt=''
-endif
-
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
+" No syntax enabled for huge js files
 autocmd Filetype javascript if getfsize(@%) > 500 | setlocal syntax=OFF | endif
-
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
 
 set encoding=utf-8
 
@@ -100,7 +65,9 @@ set visualbell
 
 set inccommand=split
 
+" Colorscheme
 set background=dark
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 colorscheme tender
 
 set ttyfast
@@ -113,8 +80,6 @@ set ts=2 sts=2 sw=2 expandtab
 
 set cursorline
 set cursorcolumn
-
-set t_Co=256
 
 set rtp+=~/.fzf
 
@@ -134,9 +99,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.min.js set syntax=off
 
   autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
-
-  " Fugitive
-  autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
 
 "NERD Tree
@@ -223,33 +185,6 @@ function! SummarizeTabs()
   endtry
 endfunction
 
-" AppDirect specific settings
-function! ReplaceLTwithHex()
-  %s/Į/\\u012E/geI
-  %s/į/\\u012F/geI
-  %s/Š/\\u0160/geI
-  %s/ą/\\u0105/geI
-  %s/ū/\\u016B/geI
-  %s/Ų/\\u0172/geI
-  %s/ų/\\u0173/geI
-  %s/ž/\\u017E/geI
-  %s/ė/\\u0117/geI
-  %s/š/\\u0161/geI
-  %s/ę/\\u0119/geI
-  %s/ę/\\u0119/geI
-  %s/č/\\u010d/geI
-endfunction
-
-" ====================
-" INSERT MODE MAPPINGS
-" ====================
-
-" ...
-
-" ====================
-" NORMAL MODE MAPPINGS
-" ====================
-
 " Disable arrow keys
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
@@ -307,11 +242,6 @@ nnoremap <leader>sl :set list!<CR>
 " \cc       : show/hide cursorline and cursorcolumn
 nnoremap <leader>cc :set cursorline! cursorcolumn!<CR>
 
-
-" ====================
-" VISUAL MODE MAPPINGS
-" ====================
-
 " \*        : recursively vimgrep for selection
 vnoremap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
 
@@ -321,9 +251,6 @@ vmap <expr> <c-l> DVB_Drag('right')
 vmap <expr> <c-j> DVB_Drag('down')
 vmap <expr> <c-k> DVB_Drag('up')
 
-" =====================
-" COMMAND LINE MAPPINGS
-" =====================
 cnoremap <C-a> <Home>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
