@@ -240,27 +240,6 @@ function! ReplaceLTwithHex()
   %s/č/\\u010d/geI
 endfunction
 
-" AppDirect rush
-command! -nargs=* ADRush call ADRush(<f-args>)
-function! ADRush(...)
-  if a:0 == 0 || a:1 == "ad"
-    cd $HOME/Projects/AppDirect/appdirect-parent/appdirect/
-  elseif a:1 == "uif"
-    cd $HOME/Projects/uif-sass/
-  elseif a:1 == "kraken"
-    cd $HOME/Projects/frontend-components/
-  endif
-
-  e .
-endfunction
-
-" AppDirect daily time
-command! -nargs=* ADDaily call ADDaily(<f-args>)
-function! ADDaily()
-  let l:path = "$HOME/Documents/AppDirect/daily-standups/" . strftime("%Y-%m-%d") . ".md"
-  execute 'edit' l:path
-endfunction
-
 " ====================
 " INSERT MODE MAPPINGS
 " ====================
