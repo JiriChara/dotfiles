@@ -6,6 +6,15 @@ endif
 " Easy Motion
 let g:EasyMotion_leader_key = '<space>'
 
+" ALE
+let g:ale_cache_executable_check_failures = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_enter = 1
+let g:ale_completion_autoimport = 1
+let b:ale_fixers = ['prettier', 'eslint']
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+
 " Leader
 let mapleader = "-"
 let maplocalleader = "\\"
