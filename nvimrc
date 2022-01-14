@@ -68,12 +68,14 @@ set mouse=a
 
 set visualbell
 
-set inccommand=split
+if exists('&inccommand') 
+  set inccommand=split
+endif
 
 " Colorscheme
 set background=dark
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme tender
+silent! colorscheme tender
 
 set ttyfast
 
