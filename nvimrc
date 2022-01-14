@@ -190,6 +190,14 @@ function! SummarizeTabs()
   endtry
 endfunction
 
+" At the moment NeoVim is no able to run interactive commands using :!.
+" This issue is being addressed in
+" https://github.com/neovim/neovim/issues/5431
+if has('nvim')
+  cnoreabbrev SudoWrite SudaWrite
+  cnoreabbrev SudoOpen SudaOpen
+endif
+
 " Disable arrow keys
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
