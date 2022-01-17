@@ -47,15 +47,7 @@ call plug#begin(has('nvim') ? '$HOME/.config/nvim/bundle' : '$HOME/.vim/bundle')
   Plug 'vim-airline/vim-airline-themes'
 
   " Text complete
-  if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-  endif
-
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " TODO needs some cofiguration
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " Snippets
   Plug 'SirVer/ultisnips'

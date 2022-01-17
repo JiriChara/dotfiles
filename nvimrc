@@ -15,9 +15,33 @@ let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 let mapleader = "-"
 let maplocalleader = "\\"
 
-" Deoplete configuration
-let g:deoplete#enable_at_startup = 1
-set completeopt-=preview
+" COC configuration
+let g:coc_global_extensions = [
+  \'coc-tsserver',
+  \'coc-eslint',
+  \'coc-emmet',
+  \'coc-highlight',
+  \'coc-prettier',
+  \'coc-pairs',
+  \'coc-spell-checker',
+  \'coc-json',
+  \'coc-html',
+  \'coc-css',
+  \'coc-react-refactor'
+\]
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 " Airline
 let g:airline_theme = 'tender'
