@@ -47,6 +47,7 @@ endif
 " Airline
 let g:airline_theme = 'tender'
 let g:airline_powerline_fonts = 1
+let g:powerline_loaded = 1
 
 " NeoVim Python
 let g:python_host_prog = '/usr/bin/python'
