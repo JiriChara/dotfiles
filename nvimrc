@@ -3,7 +3,6 @@ if &t_Co > 2 || has("gui_running")
   syntax on
 endif
 
-
 " Easy Motion
 let g:EasyMotion_leader_key = '<space>'
 
