@@ -1,4 +1,4 @@
-call plug#begin(has('nvim') ? '$HOME/.config/nvim/bundle' : '$HOME/.vim/bundle')
+call plug#begin('$HOME/.vim/bundle')
   " Plugin management
   Plug 'junegunn/vim-plug'
 
