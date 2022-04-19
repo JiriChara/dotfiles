@@ -39,6 +39,7 @@
     "testid",
     "timelineserver",
     "tsdb",
+    "ttfb",
     "userdefined",
     "vite",
     "webui",
