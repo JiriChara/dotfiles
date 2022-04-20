@@ -1,4 +1,6 @@
 call plug#begin('$HOME/.vim/bundle')
+  " cSpell:disable
+
   " Plugin management
   Plug 'junegunn/vim-plug'
 
@@ -36,18 +38,14 @@ call plug#begin('$HOME/.vim/bundle')
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'Quramy/vim-js-pretty-template' " template strings
-  Plug 'styled-components/vim-styled-components'
   Plug 'jparise/vim-graphql'
-
-  " Lint
-  Plug 'dense-analysis/ale'
 
   " Airline 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
   " Text complete
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
   " Snippets
   Plug 'SirVer/ultisnips'
@@ -61,6 +59,8 @@ call plug#begin('$HOME/.vim/bundle')
 
   " JS / TS
   Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
+
+  " cSpell:enable
 call plug#end()
 
 source $HOME/.config/nvimrc

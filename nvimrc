@@ -3,59 +3,6 @@ if &t_Co > 2 || has("gui_running")
   syntax on
 endif
 
-" Easy Motion
-let g:EasyMotion_leader_key = '<space>'
-
-" ALE
-let g:ale_cache_executable_check_failures = 1
-let b:ale_fixers = ['prettier', 'eslint']
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
-
-" Leader
-let mapleader = "-"
-let maplocalleader = "\\"
-
-" COC configuration
-let g:coc_global_extensions = [
-  \'coc-tsserver',
-  \'coc-eslint',
-  \'coc-emmet',
-  \'coc-highlight',
-  \'coc-prettier',
-  \'coc-pairs',
-  \'coc-spell-checker',
-  \'coc-json',
-  \'coc-html',
-  \'coc-css',
-  \'coc-react-refactor'
-\]
-" Remap keys for applying codeAction to the current line.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf <Plug>(coc-fix-current)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" Airline
-let g:airline_theme = 'tender'
-let g:airline_powerline_fonts = 1
-let g:powerline_loaded = 1
-
-" NeoVim Python
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
-
-" No syntax enabled for huge js files
-autocmd Filetype javascript if getfsize(@%) > 500 | setlocal syntax=OFF | endif
-
 set encoding=utf-8
 
 set laststatus=2
@@ -68,6 +15,10 @@ set ruler
 set autoindent
 set copyindent
 set list
+
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
 
 set hidden
 
@@ -116,8 +67,68 @@ set cursorcolumn
 
 set rtp+=~/.fzf
 
+" Easy Motion
+let g:EasyMotion_leader_key = '<space>'
+
+" Leader
+let mapleader = "-"
+let maplocalleader = "\\"
+
+" COC configuration
+let g:coc_global_extensions = [
+  \'coc-tsserver',
+  \'coc-eslint',
+  \'coc-emmet',
+  \'coc-highlight',
+  \'coc-prettier',
+  \'coc-pairs',
+  \'coc-spell-checker',
+  \'coc-json',
+  \'coc-html',
+  \'coc-css',
+  \'coc-react-refactor'
+\]
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf <Plug>(coc-fix-current)
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Airline
+let g:airline_theme = 'tender'
+let g:airline_powerline_fonts = 1
+let g:powerline_loaded = 1
+
+" NeoVim Python
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+
+
 if has("autocmd")
   filetype on
+
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 
@@ -132,6 +143,13 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.min.js set syntax=off
 
   autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
+  " No syntax enabled for huge js files
+  autocmd Filetype javascript if getfsize(@%) > 500 | setlocal syntax=OFF | endif
+
+  " Prevent syntax out of sync issue for large jsx/tsx files
+  autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+  autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 endif
 
 "NERD Tree
