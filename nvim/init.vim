@@ -31,13 +31,13 @@ call plug#begin('$HOME/.vim/bundle')
   " Syntax
   Plug 'tpope/vim-markdown'
   Plug 'vim-ruby/vim-ruby'
-  Plug 'yuezk/vim-js'
-  Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'Quramy/vim-js-pretty-template'
-  Plug 'jason0x43/vim-js-indent'
   Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'maxmellon/vim-jsx-pretty'
   Plug 'peitalin/vim-jsx-typescript'
+  Plug 'Quramy/vim-js-pretty-template' " template strings
+  Plug 'styled-components/vim-styled-components'
+  Plug 'jparise/vim-graphql'
 
   " Lint
   Plug 'dense-analysis/ale'
