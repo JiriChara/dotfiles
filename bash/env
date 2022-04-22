@@ -1,8 +1,9 @@
 PATH=$PATH:/usr/local/bin
+PATH=$PATH:/snap/bin
 PATH=$PATH:$HOME/.fzf/bin
 PATH=$PATH:$HOME/.rbenv/bin
 PATH=$PATH:$HOME/.rbenv/plugins/ruby-build/bin
-PATH=$PATH:/snap/bin
+PARH=$PATH:$HOME/.cargo/bin
 export PATH
 
 export EDITOR="vim"
