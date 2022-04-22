@@ -6,7 +6,8 @@ call plug#begin('$HOME/.vim/bundle')
 
   " File Navigation
   Plug 'scrooloose/nerdtree'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 
   " Move, Copy, Remove files
   Plug 'tpope/vim-eunuch'

@@ -252,10 +252,8 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-p> :FZF<CR>
 
 " Mappings to access buffers
+noremap <leader>b :Buffers<CR>
 nnoremap <leader>ll :ls<CR>
-nnoremap <leader>b :bp<CR>
-nnoremap <leader>f :bn<CR>
-nnoremap <leader>g :e#<CR>
 nnoremap <leader>1 :1b<CR>
 nnoremap <leader>2 :2b<CR>
 nnoremap <leader>3 :3b<CR>
