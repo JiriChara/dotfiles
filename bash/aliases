@@ -42,7 +42,7 @@ alias ccf='xclip -sel clip <'
 
 dot=$HOME/bin/dotfiles
 j=$HOME/Projects/chara.vip
-hp=$HOME/Projects/homepage
+h=$HOME/Projects/homepage
 
 # HPE
 pi=$HOME/Projects/private-installer
