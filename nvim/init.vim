@@ -57,6 +57,8 @@ call plug#begin('$HOME/.vim/bundle')
 
   " Colorscheme
   Plug 'jacoborus/tender.vim'
+  Plug 'sonph/onehalf', { 'rtp': 'vim' }
+  Plug 'kyoz/purify', { 'rtp': 'vim' }
 
   " JS / TS
   Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
