@@ -52,8 +52,7 @@ endif
 " Colorscheme
 set background=dark
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" colorscheme tender
-colorscheme onehalfdark
+colorscheme tender
 
 set ttyfast
 
@@ -121,8 +120,7 @@ else
 endif
 
 " Airline
-" let g:airline_theme='tender'
-let g:airline_theme='onehalfdark'
+let g:airline_theme='tender'
 let g:airline_powerline_fonts = 1
 let g:powerline_loaded = 1
 
