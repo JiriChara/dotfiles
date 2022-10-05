@@ -60,9 +60,6 @@ call plug#begin('$HOME/.vim/bundle')
   Plug 'sonph/onehalf', { 'rtp': 'vim' }
   Plug 'kyoz/purify', { 'rtp': 'vim' }
 
-  " JS / TS
-  Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
-
   " cSpell:enable
 call plug#end()
 
