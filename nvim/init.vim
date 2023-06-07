@@ -4,6 +4,8 @@ call plug#begin('$HOME/.vim/bundle')
   " Plugin management
   Plug 'junegunn/vim-plug'
 
+  Plug 'thinca/vim-localrc'
+
   " File Navigation
   Plug 'scrooloose/nerdtree'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

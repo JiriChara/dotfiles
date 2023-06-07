@@ -132,16 +132,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 if has("autocmd")
   filetype on
 
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
-
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType java setlocal ts=2 sts=2 sw=2 expandtab
-
-  autocmd BufNewFile,BufRead *.rss setfiletype xml
+  setlocal ts=2 sts=2 sw=2 expandtab
 
   autocmd BufNewFile,BufRead *.min.js set syntax=off
 
