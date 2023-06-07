@@ -48,3 +48,4 @@ h=$HOME/Projects/homepage
 pi=$HOME/Projects/private-installer
 pir=$HOME/Projects/private-installer/src/webui-react
 pia=$HOME/Projects/private-installer/src/webui
+dfui=$HOME/Projects/private-dfui
