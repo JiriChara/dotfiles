@@ -30,6 +30,6 @@
 [status]
   showUntrackedFiles = all
 [commit]
-  gpgsign = true
+	gpgsign = true
 [core]
   editor = nvim
