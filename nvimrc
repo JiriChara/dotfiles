@@ -45,6 +45,8 @@ set mouse=a
 
 set visualbell
 
+set synmaxcol=500
+
 if exists('&inccommand') 
   set inccommand=split
 endif
