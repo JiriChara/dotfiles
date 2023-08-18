@@ -141,7 +141,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
   " No syntax enabled for huge js files
-  autocmd Filetype javascript if getfsize(@%) > 1500 | setlocal syntax=OFF | endif
+  autocmd Filetype javascript if getfsize(@%) > 300 * 1024 | setlocal syntax=OFF | endif
 
   " Prevent syntax out of sync issue for large jsx/tsx files
   autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
