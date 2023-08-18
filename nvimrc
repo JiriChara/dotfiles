@@ -130,6 +130,11 @@ let g:powerline_loaded = 1
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
+" Multi cursor
+let g:VM_maps = {}
+let g:VM_maps['Find Under'] = '<C-c>'
+let g:VM_maps['Find Subword Under'] = '<C-c>'
+
 
 if has("autocmd")
   filetype on
