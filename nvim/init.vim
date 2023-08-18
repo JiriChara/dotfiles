@@ -29,6 +29,7 @@ call plug#begin('$HOME/.vim/bundle')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
   Plug 'JiriChara/dragvisuals.vim'
+  Plug 'mg979/vim-visual-multi'
 
   " Text navigation
   Plug 'Lokaltog/vim-easymotion'
