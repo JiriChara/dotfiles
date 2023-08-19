@@ -87,8 +87,7 @@ let g:coc_global_extensions = [
   \'coc-spell-checker',
   \'coc-json',
   \'coc-html',
-  \'coc-css',
-  \'coc-react-refactor'
+  \'coc-css'
 \]
 " Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)
