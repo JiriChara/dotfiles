@@ -94,6 +94,7 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf <Plug>(coc-fix-current)
 " Symbol renaming.
+nmap <F2> <Plug>(coc-rename)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
