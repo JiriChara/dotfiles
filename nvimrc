@@ -87,7 +87,8 @@ let g:coc_global_extensions = [
   \'coc-spell-checker',
   \'coc-json',
   \'coc-html',
-  \'coc-css'
+  \'coc-css',
+  \'@yaegassy/coc-tailwindcss3'
 \]
 " Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)
@@ -134,7 +135,6 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:VM_maps = {}
 let g:VM_maps['Find Under'] = '<C-c>'
 let g:VM_maps['Find Subword Under'] = '<C-c>'
-
 
 if has("autocmd")
   filetype on
