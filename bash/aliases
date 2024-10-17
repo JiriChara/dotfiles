@@ -23,12 +23,6 @@ alias cdd='cd -'
 alias reload='source ~/bin/dotfiles/bash/aliases'
 alias ea='vim ~/bin/dotfiles/bash/aliases && reload'
 
-# Rails
-alias be='bundle exec'
-alias rspec='be rspec -c'
-alias rails='be rails'
-alias rake='be rake'
-
 # Git
 alias gst='git status'
 
