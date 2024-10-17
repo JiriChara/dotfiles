@@ -15,7 +15,7 @@ task :install do
 
     file_path = File.join(ENV['HOME'], ".#{file}")
 
-    if File.exists?(file_path)
+    if File.exist?(file_path)
       if File.identical?(file, file_path)
         puts("identical #{file_path}")
       elsif replace_all
@@ -45,15 +45,15 @@ task :install do
   nvim_path = File.join(home, '.config/nvim')
   nvimrc_path = File.join(home , '.config/nvimrc')
 
-  if !File.exists?(config_path)
+  if !File.exist?(config_path)
     system %Q{mkdir -p #{config_path}}
   end
 
-  if !File.exists?(nvim_path)
+  if !File.exist?(nvim_path)
     system %Q{ln -s #{File.join(home, '.nvim')} #{nvim_path}}
   end
 
-  if !File.exists?(nvimrc_path)
+  if !File.exist?(nvimrc_path)
     system %Q{ln -s #{File.join(home, '.nvimrc')} #{nvimrc_path}}
   end
 end
