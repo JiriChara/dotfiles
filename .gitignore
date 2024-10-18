@@ -4,4 +4,6 @@ vim/.netrwhist
 nvim/.init.vim-rplugin~
 ssh/known_hosts
 ssh/known_hosts.old
+ssh/id_ed25519
+ssh/id_ed25519.pub
 zsh/spaceship.zwc
