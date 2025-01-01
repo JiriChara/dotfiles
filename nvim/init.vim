@@ -62,6 +62,8 @@ call plug#begin('$HOME/.vim/bundle')
   Plug 'jacoborus/tender.vim'
   Plug 'sonph/onehalf', { 'rtp': 'vim' }
   Plug 'kyoz/purify', { 'rtp': 'vim' }
+  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'morhetz/gruvbox'
 
   " cSpell:enable
 call plug#end()

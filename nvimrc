@@ -53,7 +53,7 @@ endif
 " Colorscheme
 set background=dark
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme tender
+colorscheme gruvbox
 
 set ttyfast
 
