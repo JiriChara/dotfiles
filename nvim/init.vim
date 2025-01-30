@@ -50,7 +50,7 @@ call plug#begin('$HOME/.vim/bundle')
   Plug 'vim-airline/vim-airline-themes'
 
   " Text complete
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': 'npm ci' }
 
   " Snippets
   Plug 'SirVer/ultisnips'
