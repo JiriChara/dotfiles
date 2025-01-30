@@ -6,7 +6,7 @@ PATH=$PATH:$HOME/.rbenv/plugins/ruby-build/bin
 PATH=$PATH:$HOME/.cargo/bin
 PATH=$PATH:/usr/lib/ruby/gems/3.0.0
 PATH=$PATH:/opt/Garmin/bin
-PATH=$PATH:$HOME/.Garmin/ConnectIQ/Sdks/connectiq-sdk-lin-7.4.3-2024-12-11-90ec25e45/bin
+PATH=$PATH:`cat $HOME/.Garmin/ConnectIQ/current-sdk.cfg`/bin
 export PATH
 
 export EDITOR="vim"
