@@ -1,94 +1,92 @@
-" Enable syntax
+" Enable syntax.
 if &t_Co > 2 || has("gui_running")
   syntax on
 endif
 
 set encoding=utf-8
-
+set termguicolors
 set laststatus=2
+
+" Level 2 and 3 are causing issues with cursorcolumn disalignment.
+set conceallevel=1
+
 set showcmd
 set showmode
 set showmatch
 set number
 set ruler
 
+" Show cursor line and column only in the current window.
+set cursorline cursorcolumn
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+
 set autoindent
 set copyindent
 set list
-
 set cmdheight=2
 set shortmess+=c
-
 set hidden
-
 set wildmenu
 set wildmode=list:longest
-
 set ignorecase
 set smartcase
-
 set incsearch
 set hlsearch
-
 set nowrap
 set scrolloff=3
-
 set title
-
 set nobackup
 set noswapfile
-
 set history=500
-
 set mouse=a
-
 set visualbell
-
 set synmaxcol=500
 
-if exists('&inccommand') 
+" Faster scrolling.
+" Use :set lazyredraw if performance is bad in huge files.
+set ttyfast
+
+if exists('&inccommand')
   set inccommand=split
 endif
 
 " Colorscheme
 set background=dark
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme gruvbox
+" cSpell:disable
+let my_colorscheme = 'gruvbox'
+execute 'colorscheme ' . my_colorscheme
+" cSpell:enable
 
-set ttyfast
-
-set listchars=tab:▸\ ,eol:¬
-
-" Tabs and Spaces
+" Default Tabs and Spaces
 set backspace=2
 set ts=2 sts=2 sw=2 expandtab
-
-set cursorline
-set cursorcolumn
-
-set rtp+=~/.fzf
+set listchars=tab:▸\ ,eol:¬
 
 " Easy Motion
 let g:EasyMotion_leader_key = '<space>'
 
-" Leader
+" Leader command
 let mapleader = "-"
 let maplocalleader = "\\"
 
-" COC configuration
+" COC plugins
+" cSpell:disable
 let g:coc_global_extensions = [
-  \'coc-tsserver',
-  \'coc-eslint',
-  \'coc-emmet',
-  \'coc-highlight',
-  \'coc-prettier',
-  \'coc-pairs',
-  \'coc-spell-checker',
-  \'coc-json',
-  \'coc-html',
-  \'coc-css',
-  \'@yaegassy/coc-tailwindcss3'
-\]
+      \'coc-tsserver',
+      \'coc-eslint',
+      \'coc-emmet',
+      \'coc-highlight',
+      \'coc-prettier',
+      \'coc-pairs',
+      \'coc-spell-checker',
+      \'coc-json',
+      \'coc-html',
+      \'coc-css',
+      \'@yaegassy/coc-tailwindcss3'
+      \]
+" cSpell:enable
+
 " Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
@@ -103,10 +101,6 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 function! s:show_documentation()
   if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
@@ -115,30 +109,30 @@ function! s:show_documentation()
   endif
 endfunction
 
+" <CR> text completion.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Sign column replaces the line number.
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   set signcolumn=number
 else
   set signcolumn=yes
 endif
 
-" Airline
-let g:airline_theme='tender'
+" Airline settings.
+let g:airline_theme = my_colorscheme
 let g:airline_powerline_fonts = 1
 let g:powerline_loaded = 1
-
-" NeoVim Python
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
 
 " Multi cursor
 let g:VM_maps = {}
 let g:VM_maps['Find Under'] = '<C-c>'
 let g:VM_maps['Find Subword Under'] = '<C-c>'
 
+" Tweaks for large JS/TS files
 if has("autocmd")
   filetype on
-
-  setlocal ts=2 sts=2 sw=2 expandtab
 
   autocmd BufNewFile,BufRead *.min.js set syntax=off
 
@@ -152,22 +146,18 @@ if has("autocmd")
   autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 endif
 
-"NERD Tree
+" NERD Tree settings
 nmap <C-n> :NERDTreeToggle<CR>
 
+" Restore cursor position
 if has("autocmd")
   filetype plugin indent on
 
-  " Restore cursor position
   autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
 endif
-
-" ====================
-" FUNCTION DEFINITIONS
-" ====================
 
 " Makes * and # work on visual mode too.
 function! s:VSetSearch(cmdtype)
@@ -179,6 +169,8 @@ endfunction
 xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 
+" _$ Remove trailing spaces.
+" _= Align code.
 function! Preserve(command)
   let _s=@/
   let l = line(".")
@@ -187,13 +179,15 @@ function! Preserve(command)
   let @/=_s
   call cursor(l, c)
 endfunction
+nnoremap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nnoremap _= :call Preserve("normal gg=G")<CR>
 
 " Toggle spell/wrap/linebreak
 command! -nargs=* WordSmith call WordSmith()
 function! WordSmith()
-    set wrap!
-    set linebreak!
-    set spell!
+  set wrap!
+  set linebreak!
+  set spell!
 endfunction
 
 " Set tabstop, softtabstop and shiftwidth to the same value
@@ -238,11 +232,11 @@ nnoremap <Down> <nop>
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 
-" Fast movement between splits
-" <c-j>       : go to bottom split
-" <c-k>       : go to top split
-" <c-h>       : go to left split
-" <c-l>       : go to right split
+" Fast movement between splits.
+" <c-j> : go to bottom split
+" <c-k> : go to top split
+" <c-h> : go to left split
+" <c-l> : go to right split
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -251,34 +245,21 @@ nnoremap <c-l> <c-w>l
 " FZF
 nnoremap <c-p> :FZF<CR>
 
-" Mappings to access buffers
+" Mappings to access buffers.
 noremap <leader>b :Buffers<CR>
-nnoremap <leader>ll :ls<CR>
 
+" Turn of highlight.
 nnoremap <leader>h :noh<CR>
 
-" Preview markdown
-map <leader>mh :!markdown % \|bcat<CR>
-map <leader>mm :!ronn -5 --pipe % \|bcat<CR>
-
+" Move down by logical lines by default instead of wrapped lines.
 nnoremap j gj
 nnoremap k gk
 
+" Fast macro record
 nnoremap Q @q
 
-" _$        : remove end line spaces
-nnoremap _$ :call Preserve("%s/\\s\\+$//e")<CR>
-" _$        : indent code
-nnoremap _= :call Preserve("normal gg=G")<CR>
-
-" \l        : show/hide tabs and line endings
-nnoremap <leader>sl :set list!<CR>
-
-" \cc       : show/hide cursorline and cursorcolumn
+" Show/hide cursorline and cursorcolumn
 nnoremap <leader>cc :set cursorline! cursorcolumn!<CR>
-
-" \*        : recursively vimgrep for selection
-vnoremap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
 
 " Make dragvisuals.vim work in visual mode
 vmap <expr> <c-h> DVB_Drag('left')
@@ -286,6 +267,7 @@ vmap <expr> <c-l> DVB_Drag('right')
 vmap <expr> <c-j> DVB_Drag('down')
 vmap <expr> <c-k> DVB_Drag('up')
 
+" Linux like commands
 cnoremap <C-a> <Home>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
