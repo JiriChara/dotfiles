@@ -4,9 +4,10 @@ call plug#begin('$HOME/.vim/bundle')
   " Plugin management
   Plug 'junegunn/vim-plug'
 
+  " Local rc
   Plug 'thinca/vim-localrc'
 
-  " File Navigation
+  " File/System Navigation
   Plug 'scrooloose/nerdtree'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
@@ -16,12 +17,11 @@ call plug#begin('$HOME/.vim/bundle')
 
   " Git
   Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-rhubarb'
 
   " Logs
   Plug 'vim-scripts/TailMinusF'
 
-  " Ruby
+  " Auto add closing statements
   Plug 'tpope/vim-endwise'
 
   " Text transformation
@@ -29,7 +29,7 @@ call plug#begin('$HOME/.vim/bundle')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
   Plug 'JiriChara/dragvisuals.vim'
-  Plug 'mg979/vim-visual-multi'
+  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
   " Text navigation
   Plug 'Lokaltog/vim-easymotion'
@@ -60,10 +60,6 @@ call plug#begin('$HOME/.vim/bundle')
   Plug 'lambdalisue/suda.vim'
 
   " Colorscheme
-  Plug 'jacoborus/tender.vim'
-  Plug 'sonph/onehalf', { 'rtp': 'vim' }
-  Plug 'kyoz/purify', { 'rtp': 'vim' }
-  Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'morhetz/gruvbox'
 
   " cSpell:enable
