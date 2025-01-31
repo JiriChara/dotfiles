@@ -3,6 +3,10 @@ if &t_Co > 2 || has("gui_running")
   syntax on
 endif
 
+if &compatible
+  set nocompatible
+endif
+
 set encoding=utf-8
 set termguicolors
 set laststatus=2
@@ -44,6 +48,15 @@ set mouse=a
 set visualbell
 set synmaxcol=500
 set updatetime=300
+set nrformats-=octal
+set display+=lastline
+
+" Make the escape key more responsive by decreasing the wait time for an
+" escape sequence (e.g., arrow keys).
+if !has('nvim') && &ttimeoutlen == -1
+  set ttimeout
+  set ttimeoutlen=100
+endif
 
 " Faster scrolling.
 " Use :set lazyredraw if performance is bad in huge files.
