@@ -1,2 +1,16 @@
 # dotfiles
-Copyright © 2012 Jiri Chara. All Rights Reserved.
+
+# Installation
+
+```
+DIR="$HOME/bin"
+
+if [ ! -d "$DIR" ]; then
+  mkdir -p "$DIR"
+fi
+git clone git@github.com:JiriChara/dotfiles.git "$DIR"
+cd "$DIR"
+/ust/bin/rake install
+```
+
+Copyright © 2025 Jiri Chara. All Rights Reserved.
