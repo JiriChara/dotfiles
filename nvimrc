@@ -37,11 +37,13 @@ set nowrap
 set scrolloff=3
 set title
 set nobackup
+set nowritebackup
 set noswapfile
 set history=500
 set mouse=a
 set visualbell
 set synmaxcol=500
+set updatetime=300
 
 " Faster scrolling.
 " Use :set lazyredraw if performance is bad in huge files.
@@ -112,6 +114,18 @@ endfunction
 " <CR> text completion.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Sign column replaces the line number.
 if has("nvim-0.5.0") || has("patch-8.1.1564")

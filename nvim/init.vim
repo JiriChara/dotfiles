@@ -52,10 +52,6 @@ call plug#begin('$HOME/.vim/bundle')
   " Text complete
   Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': 'npm ci' }
 
-  " Snippets
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-
   " Save as Sudo
   Plug 'lambdalisue/suda.vim'
 
