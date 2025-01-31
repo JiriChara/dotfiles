@@ -9,6 +9,7 @@ call plug#begin('$HOME/.vim/bundle')
 
   " File/System Navigation
   Plug 'preservim/nerdtree'
+  Plug 'ryanoasis/vim-devicons'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 
