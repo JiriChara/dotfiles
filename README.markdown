@@ -1,6 +1,6 @@
 # dotfiles
 
-# Installation
+## Installation
 
 ```
 DIR="$HOME/bin"
