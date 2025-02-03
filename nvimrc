@@ -11,9 +11,6 @@ set encoding=utf-8
 set termguicolors
 set laststatus=2
 
-" Level 2 and 3 are causing issues with cursorcolumn disalignment.
-set conceallevel=1
-
 set showcmd
 set showmode
 set showmatch
@@ -137,6 +134,10 @@ inoremap <silent><expr> <TAB>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" <CR> text completion.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Formatting selected code
 xmap <leader>f  <Plug>(coc-format-selected)
