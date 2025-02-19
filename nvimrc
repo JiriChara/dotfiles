@@ -19,8 +19,8 @@ set ruler
 
 " Show cursor line and column only in the current window.
 set cursorline cursorcolumn
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
+autocmd FileType nerdtree setlocal nocursorcolumn
+autocmd FileType help setlocal nocursorcolumn
 
 set autoindent
 set copyindent
