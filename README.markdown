@@ -10,7 +10,7 @@ if [ ! -d "$DIR" ]; then
 fi
 git clone git@github.com:JiriChara/dotfiles.git "$DIR"
 cd "$DIR"
-/ust/bin/rake install
+./install.sh
 ```
 
 Copyright © 2025 Jiri Chara. All Rights Reserved.
