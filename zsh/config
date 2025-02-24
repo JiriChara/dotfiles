@@ -1,43 +1,85 @@
 #! /usr/bin/zsh
 
+# direnv setup
+eval "$(direnv hook zsh)"
+
+# install zinit if not already installed
+install_zinit() {
+    if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+        print -P "%F{33} Installing ZDHARMA-CONTINUUM Plugin Manager (zinit)...%f"
+        command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+        command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+            print -P "%F{33} Installation successful.%f" || \
+            print -P "%F{160} The clone has failed.%f"
+    fi
+}
+
+install_zinit
+
+# source zinit and load completion features
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# load zinit annexes
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+# load zsh plugins
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
+
+# Load spaceship prompt
 source /usr/lib/spaceship-prompt/spaceship.zsh
 
+# Enable colors and prompt initialization
 autoload -U colors
-autoload -U promptinit; promptinit
-
+autoload -U promptinit
+promptinit
 colors
 
+# Set the prompt
 setopt PROMPT_SUBST
-
 prompt spaceship
+
+# Enable spelling correction
 setopt CORRECT
 setopt CORRECTALL
 
-setopt hist_ignore_dups     # ignore duplication command history list
-setopt share_history        # share command history data
-setopt HIST_IGNORE_SPACE
-setopt APPEND_HISTORY # write history only when closing
-setopt EXTENDED_HISTORY # add more info
+# History settings
+setopt hist_ignore_dups
+setopt share_history
+setopt hist_ignore_space
+setopt append_history
+setopt extended_history
+setopt hist_save_no_dups
 
+# URL quote magic setup
 autoload url-quote-magic
 zle -N self-insert url-quote-magic
 
-# Load completions for Ruby, Git, etc.
-autoload compinit
-compinit
+# autoload and initialize completions
+autoload -Uz compinit
+compinit -C
 
+# history file and size settings
 HISTFILE=~/.zsh_history
 SAVEHIST=10000
 HISTSIZE=10000
 
-LISTMAX=0 # Ask to complete if top of list would scroll off screen
+# list completion settings
+LISTMAX=0 # ask to complete if the top of the list would scroll off screen
 
-# Make CTRL-W delete after other chars, not just spaces
+# keybindings
 WORDCHARS=${WORDCHARS//[&=\/;\!#%\{]}
-
 bindkey -e
-
 bindkey "\e[3~" delete-char
 
-# Auto CD
+# Enable fzf for reverse history search (Ctrl + R)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# auto cd option
 setopt autocd
