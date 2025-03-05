@@ -51,7 +51,7 @@ call plug#begin('$HOME/.vim/bundle')
   Plug 'vim-airline/vim-airline-themes'
 
   " Text complete
-  Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': 'npm ci' }
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
   " Save as Sudo
   Plug 'lambdalisue/suda.vim'
