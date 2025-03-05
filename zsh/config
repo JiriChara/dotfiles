@@ -80,6 +80,8 @@ bindkey "\e[3~" delete-char
 
 # Enable fzf for reverse history search (Ctrl + R)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
 # auto cd option
 setopt autocd
