@@ -41,7 +41,7 @@ ct=$HOME/Projects/ClearTrack
 
 # HPE
 pi=$HOME/Projects/private-installer
-pir=$HOME/Projects/private-installer/src/webui-react
-pia=$HOME/Projects/private-installer/src/webui
 dfui=$HOME/Projects/private-dfui
+mcs=$HOME/Projects/private-mcs
+pkg=$HOME/Projects/private-pkg
 ezc=$HOME/Projects/ez-components
