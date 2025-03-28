@@ -1,7 +1,5 @@
 {
-  "eslint": {
-    "autoFixOnSave": true
-  },
+  "eslint.autoFixOnSave": true,
   "cSpell.words": [
     "apiserver",
     "asynchbase",
