@@ -37,7 +37,7 @@ alias ccf='xclip -sel clip <'
 dot=$HOME/bin/dotfiles
 j=$HOME/Projects/chara.vip
 h=$HOME/Projects/homepage
-ct=$HOME/Projects/ClearTrack
+dr=$HOME/Projects/dry-run
 
 # HPE
 pi=$HOME/Projects/private-installer
