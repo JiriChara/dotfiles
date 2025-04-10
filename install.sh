@@ -1,6 +1,6 @@
 #!/bin/bash
 
-skip_files=("README.markdown")
+skip_files=("README.markdown install.sh .git .gitignore .gitmodules")
 replace_all=false
 
 install() {
