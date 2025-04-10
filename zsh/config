@@ -31,9 +31,7 @@ zinit light-mode for \
 # load zsh plugins
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
-
-# Load spaceship prompt
-source /usr/lib/spaceship-prompt/spaceship.zsh
+zinit light spaceship-prompt/spaceship-prompt
 
 # Enable colors and prompt initialization
 autoload -U colors
@@ -43,7 +41,6 @@ colors
 
 # Set the prompt
 setopt PROMPT_SUBST
-prompt spaceship
 
 # Enable spelling correction
 setopt CORRECT
