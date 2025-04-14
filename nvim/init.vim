@@ -44,7 +44,6 @@ call plug#begin('$HOME/.vim/bundle')
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'Quramy/vim-js-pretty-template' " template strings
   Plug 'jparise/vim-graphql'
-  Plug 'klimeryk/vim-monkey-c'
 
   " Airline 
   Plug 'vim-airline/vim-airline'
