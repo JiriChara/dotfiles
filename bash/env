@@ -9,6 +9,7 @@ PATH=$PATH:/opt/Garmin/bin
 if [ -f "$HOME/.Garmin/ConnectIQ/current-sdk.cfg" ]; then
   PATH="$PATH:$(cat $HOME/.Garmin/ConnectIQ/current-sdk.cfg)bin"
 fi
+export PATH="$HOME/.jenv/shims:$PATH"
 export PATH
 
 export EDITOR="vim"
@@ -38,3 +39,5 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+eval "$(jenv init -)"
