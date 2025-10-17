@@ -95,6 +95,7 @@ let g:coc_global_extensions = [
       \'coc-json',
       \'coc-html',
       \'coc-css',
+      \'coc-biome',
       \'@yaegassy/coc-tailwindcss3'
       \]
 " cSpell:enable
