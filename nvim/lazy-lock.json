@@ -24,7 +24,6 @@
   "vim-jsx-typescript": { "branch": "master", "commit": "22df470d92651426f2377e3166488672f7b4b4ef" },
   "vim-localrc": { "branch": "master", "commit": "b224cfbb11a30610551e7635a64f3fb22dbd74a1" },
   "vim-markdown": { "branch": "master", "commit": "f9f845f28f4da33a7655accb22f4ad21f7d9fb66" },
-  "vim-plug": { "branch": "master", "commit": "904dac1530cfec0880cd44e4f7f206eb2e9e3247" },
   "vim-ruby": { "branch": "master", "commit": "bf3a5994ce63796db7b1b04aea92772271f387aa" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-visual-multi": { "branch": "master", "commit": "a6975e7c1ee157615bbc80fc25e4392f71c344d4" }

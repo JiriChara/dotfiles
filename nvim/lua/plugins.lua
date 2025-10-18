@@ -1,6 +1,5 @@
 return {
-  -- Plugin management
-  "junegunn/vim-plug",
+  -- Local Vim settings
   "thinca/vim-localrc",
 
   -- File/System Navigation
