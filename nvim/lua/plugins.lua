@@ -20,6 +20,9 @@ return {
     priority = 1000,
     init = function()
       vim.g.airline_powerline_fonts = 1
+      vim.g.powerline_loaded = 1
+      vim.g.airline_symbols_ascii = 0
+      vim.g["airline#extensions#coc#enabled"] = 1
     end
   },
 
@@ -51,10 +54,26 @@ return {
   "tpope/vim-surround",
   "tpope/vim-commentary",
   "JiriChara/dragvisuals.vim",
-  { "mg979/vim-visual-multi", branch = "master" },
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+    lazy = false,
+    init = function()
+      vim.g.VM_maps = {
+        ["Find Under"] = "<C-c>",
+        ["Find Subword Under"] = "<C-c>",
+      }
+    end
+  },
 
   -- Text navigation
-  "Lokaltog/vim-easymotion",
+  {
+    "Lokaltog/vim-easymotion",
+    lazy = false,
+    init = function()
+      vim.g.EasyMotion_leader_key = '<space>'
+    end
+  },
 
   -- Syntax
   "tpope/vim-markdown",
@@ -66,8 +85,12 @@ return {
   "Quramy/vim-js-pretty-template",
   "jparise/vim-graphql",
 
-  -- Text complete
-  { "neoclide/coc.nvim", branch = "release" },
+  -- IDE
+  {
+    "neoclide/coc.nvim",
+    branch = "release",
+    lazy = false
+  },
 
   -- Save as Sudo
   "lambdalisue/suda.vim",

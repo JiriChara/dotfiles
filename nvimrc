@@ -76,11 +76,14 @@ set ts=2 sts=2 sw=2 expandtab
 set listchars=tab:▸\ ,eol:¬
 
 " Easy Motion
-let g:EasyMotion_leader_key = '<space>'
 
 " Leader command
 let mapleader = "-"
 let maplocalleader = "\\"
+
+if !has("nvim")
+  let g:EasyMotion_leader_key = '<space>'
+endif
 
 " COC plugins
 " cSpell:disable
