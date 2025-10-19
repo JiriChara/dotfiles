@@ -2,11 +2,37 @@ return {
   -- Local Vim settings
   "thinca/vim-localrc",
 
+  -- Icons
+  {
+    "nvim-tree/nvim-web-devicons",
+    lazy = false,
+    priority = 1000
+  },
+
+  -- Airline
+  {
+    "vim-airline/vim-airline",
+    dependencies = {
+      "vim-airline/vim-airline-themes",
+      "ryanoasis/vim-devicons"
+    },
+    lazy = false,
+    priority = 1000,
+    init = function()
+      vim.g.airline_powerline_fonts = 1
+    end
+  },
+
   -- File/System Navigation
-  "preservim/nerdtree",
-  "ryanoasis/vim-devicons",
   { "junegunn/fzf", dir = "~/.fzf", build = "./install --all" },
   "junegunn/fzf.vim",
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("nvim-tree").setup()
+    end
+  },
 
   -- Move, Copy, Remove files
   "tpope/vim-eunuch",
@@ -39,10 +65,6 @@ return {
   "peitalin/vim-jsx-typescript",
   "Quramy/vim-js-pretty-template",
   "jparise/vim-graphql",
-
-  -- Airline
-  "vim-airline/vim-airline",
-  "vim-airline/vim-airline-themes",
 
   -- Text complete
   { "neoclide/coc.nvim", branch = "release" },

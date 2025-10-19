@@ -160,6 +160,7 @@ endif
 let g:airline_theme = my_colorscheme
 let g:airline_powerline_fonts = 1
 let g:powerline_loaded = 1
+let g:airline_symbols_ascii = 0
 let g:airline#extensions#coc#enabled = 1
 
 " Multi cursor
@@ -184,7 +185,11 @@ if has("autocmd")
 endif
 
 " NERD Tree settings
-nmap <C-n> :NERDTreeToggle<CR>
+if has("nvim")
+  nmap <C-n> :NvimTreeToggle<CR>
+else
+  nmap <C-n> :NERDTreeToggle<CR>
+endif
 
 " Restore cursor position
 if has("autocmd")
