@@ -1,20 +1,26 @@
 return {
+  -- ============================
   -- Local Vim settings
+  -- ============================
   "thinca/vim-localrc",
 
+  -- ============================
   -- Icons
+  -- ============================
   {
     "nvim-tree/nvim-web-devicons",
     lazy = false,
-    priority = 1000
+    priority = 1000,
   },
 
-  -- Airline
+  -- ============================
+  -- Airline / Statusline
+  -- ============================
   {
     "vim-airline/vim-airline",
     dependencies = {
       "vim-airline/vim-airline-themes",
-      "ryanoasis/vim-devicons"
+      "ryanoasis/vim-devicons",
     },
     lazy = false,
     priority = 1000,
@@ -23,10 +29,12 @@ return {
       vim.g.powerline_loaded = 1
       vim.g.airline_symbols_ascii = 0
       vim.g["airline#extensions#coc#enabled"] = 1
-    end
+    end,
   },
 
-  -- File/System Navigation
+  -- ============================
+  -- File / System Navigation
+  -- ============================
   { "junegunn/fzf", dir = "~/.fzf", build = "./install --all" },
   "junegunn/fzf.vim",
   {
@@ -34,22 +42,32 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("nvim-tree").setup()
-    end
+    end,
   },
 
-  -- Move, Copy, Remove files
-  "tpope/vim-eunuch",
+  -- ============================
+  -- File operations
+  -- ============================
+  "tpope/vim-eunuch",  -- move, copy, remove files
 
+  -- ============================
   -- Git
+  -- ============================
   "tpope/vim-fugitive",
 
-  -- Logs
+  -- ============================
+  -- Logs / Monitoring
+  -- ============================
   "vim-scripts/TailMinusF",
 
+  -- ============================
   -- Auto add closing statements
+  -- ============================
   "tpope/vim-endwise",
 
-  -- Text transformation
+  -- ============================
+  -- Text transformations
+  -- ============================
   "tpope/vim-abolish",
   "tpope/vim-surround",
   "tpope/vim-commentary",
@@ -63,19 +81,23 @@ return {
         ["Find Under"] = "<C-c>",
         ["Find Subword Under"] = "<C-c>",
       }
-    end
+    end,
   },
 
-  -- Text navigation
+  -- ============================
+  -- Text navigation / motions
+  -- ============================
   {
     "Lokaltog/vim-easymotion",
     lazy = false,
     init = function()
       vim.g.EasyMotion_leader_key = '<space>'
-    end
+    end,
   },
 
-  -- Syntax
+  -- ============================
+  -- Syntax / Language support
+  -- ============================
   "tpope/vim-markdown",
   "vim-ruby/vim-ruby",
   "pangloss/vim-javascript",
@@ -85,16 +107,22 @@ return {
   "Quramy/vim-js-pretty-template",
   "jparise/vim-graphql",
 
-  -- IDE
+  -- ============================
+  -- IDE / LSP
+  -- ============================
   {
     "neoclide/coc.nvim",
     branch = "release",
-    lazy = false
+    lazy = false,
   },
 
+  -- ============================
   -- Save as Sudo
+  -- ============================
   "lambdalisue/suda.vim",
 
+  -- ============================
   -- Colorscheme
+  -- ============================
   "morhetz/gruvbox",
 }

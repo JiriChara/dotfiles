@@ -62,15 +62,15 @@ endif
 " Appearance
 " ============================
 set background=dark
-let my_colorscheme = 'gruvbox'
-execute 'colorscheme ' . my_colorscheme
+colorscheme gruvbox
 
 " Airline settings
-let g:airline_theme = my_colorscheme
-let g:airline_powerline_fonts = 1
-let g:powerline_loaded = 1
-let g:airline_symbols_ascii = 0
-let g:airline#extensions#coc#enabled = 1
+if !has("nvim")
+  let g:airline_powerline_fonts = 1
+  let g:powerline_loaded = 1
+  let g:airline_symbols_ascii = 0
+  let g:airline#extensions#coc#enabled = 1
+endif
 
 " ============================
 " Tabs & Indentation
@@ -171,9 +171,11 @@ if !has("nvim")
 endif
 
 " Multi Cursor
-let g:VM_maps = {}
-let g:VM_maps['Find Under'] = '<C-c>'
-let g:VM_maps['Find Subword Under'] = '<C-c>'
+if !has("nvim")
+  let g:VM_maps = {}
+  let g:VM_maps['Find Under'] = '<C-c>'
+  let g:VM_maps['Find Subword Under'] = '<C-c>'
+endif
 
 " ============================
 " Filetype Tweaks
