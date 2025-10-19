@@ -1,65 +1,31 @@
 #!/bin/bash
+set -e
 
-skip_files=("README.markdown install.sh .git .gitignore .gitmodules")
-replace_all=false
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-install() {
-  for file in *; do
-    # Skip files in the skip_files array
-    if [[ " ${skip_files[@]} " =~ " ${file} " ]]; then
-      continue
-    fi
-
-    file_path="$HOME/.$file"
-
-    if [[ -e "$file_path" ]]; then
-      if cmp -s "$file" "$file_path"; then
-        echo "identical $file_path"
-      elif [[ "$replace_all" == true ]]; then
-        replace_file "$file" "$file_path"
-      else
-        read -p "overwrite $file_path? [ynaq] " choice
-        case "$choice" in
-          a) 
-            replace_all=true
-            replace_file "$file" "$file_path"
-            ;;
-          y) 
-            replace_file "$file" "$file_path"
-            ;;
-          q) 
-            exit
-            ;;
-          *)
-            echo "skipping $file_path"
-            ;;
-        esac
-      fi
-    else
-      link_file "$file" "$file_path"
-    fi
-  done
-
-  # Symlink neovim configs
-  home="$HOME"
-  config_path="$home/.config"
-  nvim_path="$home/.config/nvim"
-  nvimrc_path="$home/.config/nvimrc"
-
-  [[ ! -e "$config_path" ]] && mkdir -p "$config_path"
-  [[ ! -e "$nvim_path" ]] && ln -s "$home/.nvim" "$nvim_path"
-  [[ ! -e "$nvimrc_path" ]] && ln -s "$home/.nvimrc" "$nvimrc_path"
-}
-
-replace_file() {
-  rm -rf "$2"
-  link_file "$1" "$2"
-}
+echo "Installing dotfiles from $DOTFILES_DIR"
 
 link_file() {
-  echo "linking $2"
-  ln -s "$PWD/$1" "$2"
+  local src="$1"
+  local dest="$2"
+  echo "Linking $dest -> $src"
+  ln -sf "$src" "$dest"
 }
 
-# Run the install function
-install
+# Symlink Bash
+link_file "$DOTFILES_DIR/bashrc" "$HOME/.bashrc"
+link_file "$DOTFILES_DIR/bash" "$HOME/.bash"
+
+# Symlink Zsh
+link_file "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
+link_file "$DOTFILES_DIR/zsh" "$HOME/.zsh"
+
+# Symlink Git Config
+link_file "$DOTFILES_DIR/gitconfig" "$HOME/.gitconfig"
+
+# Symlink Vim & Neovim Configs
+mkdir -p "$HOME/.config"
+link_file "$DOTFILES_DIR/nvimrc" "$HOME/.config/nvimrc"
+link_file "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
+link_file "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
+link_file "$DOTFILES_DIR/vim" "$HOME/.vim"

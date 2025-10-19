@@ -33,4 +33,11 @@ cd "$DIR"
 ./install.sh
 ```
 
-Copyright © 2025 Jiri Chara. All Rights Reserved.
+## Test in Docker Container
+
+```
+docker buildx build -t dotfiles .
+docker run -it --rm dotfiles
+```
+
+Copyright © 2025 Jiří Chára. All Rights Reserved.
