@@ -14,22 +14,14 @@ return {
   },
 
   -- ============================
-  -- Airline / Statusline
+  -- Statusline
   -- ============================
   {
-    "vim-airline/vim-airline",
-    dependencies = {
-      "vim-airline/vim-airline-themes",
-      "ryanoasis/vim-devicons",
-    },
-    lazy = false,
-    priority = 1000,
-    init = function()
-      vim.g.airline_powerline_fonts = 1
-      vim.g.powerline_loaded = 1
-      vim.g.airline_symbols_ascii = 0
-      vim.g["airline#extensions#coc#enabled"] = 1
-    end,
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup()
+    end
   },
 
   -- ============================
@@ -42,7 +34,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("nvim-tree").setup()
-    end,
+    end
   },
 
   -- ============================
