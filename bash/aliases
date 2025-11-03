@@ -38,10 +38,3 @@ dot=$HOME/bin/dotfiles
 j=$HOME/Projects/chara.vip
 h=$HOME/Projects/homepage
 dr=$HOME/Projects/dry-run
-
-# HPE
-pi=$HOME/Projects/private-installer
-dfui=$HOME/Projects/private-dfui
-mcs=$HOME/Projects/private-mcs
-pkg=$HOME/Projects/private-pkg
-ezc=$HOME/Projects/ez-components
