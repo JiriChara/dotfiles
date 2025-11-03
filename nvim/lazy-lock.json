@@ -4,7 +4,7 @@
   "dragvisuals.vim": { "branch": "master", "commit": "d1d27a8a385e63e8b624b5d398ab3c0c0aa44b1c" },
   "fzf.vim": { "branch": "master", "commit": "879db51d0965515cdaef9b7f6bdeb91c65d2829e" },
   "gruvbox": { "branch": "master", "commit": "697c00291db857ca0af00ec154e5bd514a79191f" },
-  "lazy.nvim": { "branch": "main", "commit": "f0f5bbb9e5bfae5e6468f9359ffea3d151418176" },
+  "lazy.nvim": { "branch": "main", "commit": "202d8e92b3a74ac88eb3a7f1e40fb59b4c2a6535" },
   "lualine.nvim": { "branch": "master", "commit": "3946f0122255bc377d14a59b27b609fb3ab25768" },
   "nvim-tree.lua": { "branch": "master", "commit": "64e2192f5250796aa4a7f33c6ad888515af50640" },
   "nvim-web-devicons": { "branch": "master", "commit": "8dcb311b0c92d460fac00eac706abd43d94d68af" },
