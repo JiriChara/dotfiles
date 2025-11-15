@@ -3,6 +3,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "coc.preferences.formatOnSave": true,
   "cSpell.words": [
     "apiserver",
     "asynchbase",

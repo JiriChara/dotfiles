@@ -127,7 +127,8 @@ let g:coc_global_extensions = [
       \'coc-html',
       \'coc-css',
       \'coc-biome',
-      \'@yaegassy/coc-tailwindcss3'
+      \'@yaegassy/coc-tailwindcss3',
+      \'@yaegassy/coc-volar'
       \]
 
 " Coc key mappings
