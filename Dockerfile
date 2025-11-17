@@ -23,5 +23,6 @@ RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && \
 RUN git clone https://github.com/JiriChara/dotfiles.git /root/dotfiles
 
 RUN chmod +x install.sh && ./install.sh
+RUN vim -u /root/.vimrc +PlugInstall +qall || true
 
 CMD ["/bin/zsh"]

@@ -31,6 +31,7 @@ link_file "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
 link_file "$DOTFILES_DIR/vim" "$HOME/.vim"
 
 # Install vim plugins
-echo "Installing Vim plugins..."
-export GIT_TERMINAL_PROMPT=0 # avoid prompts in Docker
-vim -Nu "$HOME/.vimrc" +PlugInstall +qall || true
+if [ -t 1 ]; then
+  echo "Installing Vim plugins..."
+  vim -Es -u ~/.vimrc +PlugInstall +qall
+fi
