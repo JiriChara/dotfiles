@@ -1,3 +1,12 @@
-require("config.lazy")
+-- Safely enable Neovim's Lua module loader (speeds up startup; won't error on older versions)
+pcall(vim.loader.enable)
 
-vim.cmd('source $HOME/.config/nvimrc')
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+require("config.options")
+require("config.lazy")
+require("config.lsp")
+require("config.globals")
+require("config.keymaps")
+require("config.autocmds")

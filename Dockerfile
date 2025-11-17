@@ -7,9 +7,8 @@ ENV NVM_DIR=/root/.nvm
 WORKDIR /root/dotfiles
 
 RUN pacman -Syu --noconfirm \
-    git base-devel zsh sudo curl wget unzip \
-    openssh direnv python pyenv jenv \
-    python pyenv jenv vim neovim fzf fd ripgrep
+      git base-devel zsh sudo curl wget unzip openssh direnv python pyenv jenv python pyenv jenv \
+      vim neovim fzf fd ripgrep xclip
 
 RUN mkdir -p "$NVM_DIR" && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash && \
