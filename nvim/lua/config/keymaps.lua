@@ -2,7 +2,7 @@ local map = vim.keymap.set
 local o = { noremap = true, silent = true }
 
 -- Clear search highlights when pressing <Esc>
-map("n", "<esc>", "<cmd>nohlsearch<cr>", vim.tbl_extend("force", o, { desc = "Clear search"}))
+map("n", "<esc>", "<cmd>nohlsearch<cr>", vim.tbl_extend("force", o, { desc = "Clear search" }))
 
 -- Navigate between split windows using Ctrl + h/j/k/l
 map("n", "<C-h>", "<C-w>h", o)
@@ -20,9 +20,13 @@ map("n", "<A-Down>", "<cmd>resize -1<cr>", o)
 map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", o)
 
 -- Telescope fuzzy finder
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+local builtin = require("telescope.builtin")
+map("n", "<C-p>", builtin.find_files, vim.tbl_extend("force", o, { desc = "Telescope find files" }))
+map("n", "<leader>ff", builtin.find_files, vim.tbl_extend("force", o, { desc = "Telescope find files" }))
+map("n", "<leader>fg", builtin.live_grep, vim.tbl_extend("force", o, { desc = "Telescope live grep" }))
+map("n", "<leader>fb", builtin.buffers, vim.tbl_extend("force", o, { desc = "Telescope buffers" }))
+map("n", "<leader>fh", builtin.help_tags, vim.tbl_extend("force", o, { desc = "Telescope help tags" }))
+
+vim.keymap.set("c", "%%", function()
+	return vim.fn.expand("%:p:h")
+end, { expr = true, replace_keycodes = false })
