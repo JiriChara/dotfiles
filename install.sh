@@ -29,3 +29,6 @@ link_file "$DOTFILES_DIR/nvimrc" "$HOME/.config/nvimrc"
 link_file "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
 link_file "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
 link_file "$DOTFILES_DIR/vim" "$HOME/.vim"
+
+# Install vim plugins
+vim -E -u ~/.vimrc +PlugInstall +qall
