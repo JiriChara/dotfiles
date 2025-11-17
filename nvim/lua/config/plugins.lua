@@ -295,10 +295,23 @@ return {
     },
   },
 
+  -- Search and Replace
   {
     "MagicDuck/grug-far.nvim",
     config = function()
       require("grug-far").setup({})
     end,
+  },
+
+  -- Trouble/TODO/FIX hightlighting
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+  {
+    "folke/trouble.nvim",
+    opts = {},
+    cmd = "Trouble",
   },
 }

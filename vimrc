@@ -91,11 +91,6 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 " ============================
-" Source Neovim config
-" ============================
-source $HOME/.config/nvimrc
-
-" ============================
 " General Settings
 " ============================
 if &t_Co > 2 || has("gui_running")

@@ -1,6 +1,7 @@
 vim/backup/*
 vim/tmp/*
 vim/.netrwhist
+vim/bundle
 nvim/.init.vim-rplugin~
 ssh/known_hosts
 ssh/known_hosts.old
