@@ -20,7 +20,7 @@ These dotfiles are designed to work on most Linux distributions and support both
 
 I also provide configurations for [**Vim**](https://www.vim.org/) and [**Neovim**](https://neovim.io/), designed to share as many mappings and settings as possible while preferring Neovim Lua for more modern and powerful customization.
 
-[Rugnak](doc/caveman.png)
+![Rugnak](doc/caveman.png)
 
 > Rugnak open vim! Rugnak write code! Rugnak happy!
 
