@@ -31,4 +31,4 @@ link_file "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
 link_file "$DOTFILES_DIR/vim" "$HOME/.vim"
 
 # Install vim plugins
-vim -E -u ~/.vimrc +PlugInstall +qall
+vim -Es -u ~/.vimrc +PlugInstall +qall
