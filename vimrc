@@ -152,7 +152,11 @@ endif
 " Appearance
 " ============================
 set background=dark
-colorscheme gruvbox
+try
+    colorscheme gruvbox
+catch /^Vim\%((\a\+)$$\=:E185/
+    colorscheme default
+endtry
 
 " Airline settings
 let g:airline_powerline_fonts = 1
