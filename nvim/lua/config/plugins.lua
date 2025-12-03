@@ -129,7 +129,7 @@ return {
     automatic_installation = true,
     config = function()
       require("mason-null-ls").setup({
-        ensure_installed = { "stylua", "prettier", "isort", "black" },
+        ensure_installed = { "stylua", "prettier", "isort", "black", "eslint_d" },
       })
     end,
   },
@@ -218,12 +218,12 @@ return {
 
       conform.setup({
         formatters_by_ft = {
-          javascript = { "prettier" },
-          typescript = { "prettier" },
-          javascriptreact = { "prettier" },
-          typescriptreact = { "prettier" },
-          svelte = { "prettier" },
-          vue = { "prettier" },
+          javascript = { "prettier", "eslint_d" },
+          typescript = { "prettier", "eslint_d" },
+          javascriptreact = { "prettier", "eslint_d" },
+          typescriptreact = { "prettier", "eslint_d" },
+          svelte = { "prettier", "eslint_d" },
+          vue = { "prettier", "eslint_d" },
           css = { "prettier" },
           html = { "prettier" },
           json = { "prettier" },
