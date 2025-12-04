@@ -38,4 +38,4 @@ dot=$HOME/bin/dotfiles
 j=$HOME/Projects/chara.vip
 h=$HOME/Projects/homepage
 dr=$HOME/Projects/dry-run
-nj=$HOME/Projects/nvim-jiri
+cbt=$HOME/Projects/cbt-companion
