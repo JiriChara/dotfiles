@@ -50,6 +50,8 @@ end
 vim.lsp.config("lua_ls", {
   on_attach = on_attach,
   capabilities = capabilities,
+  -- TODO: remove this currently Mason version of lua-lsp is not working well on arch
+  cmd = { "/usr/bin/lua-language-server" },
   settings = {
     Lua = {
       diagnostics = {
@@ -63,7 +65,7 @@ vim.lsp.config("lua_ls", {
 
 -- TS/Vue.js LSP configuration
 local vue_language_server_path =
-    vim.fn.expand("$MASON/packages" .. "/vue-language-server" .. "/node_modules/@vue/language-server")
+  vim.fn.expand("$MASON/packages" .. "/vue-language-server" .. "/node_modules/@vue/language-server")
 local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
 local vue_plugin = {
   name = "@vue/typescript-plugin",
