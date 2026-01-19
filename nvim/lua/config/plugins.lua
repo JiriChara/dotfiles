@@ -38,6 +38,11 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("telescope").setup({
+        pickers = {
+          find_files = {
+            hidden = true,
+          },
+        },
         defaults = {
           mappings = {
             i = {
@@ -128,7 +133,7 @@ return {
     automatic_installation = true,
     config = function()
       require("mason-null-ls").setup({
-        ensure_installed = { "stylua", "prettier", "isort", "black", "eslint_d" },
+        ensure_installed = { "stylua", "prettierd", "isort", "black", "eslint_d" },
       })
     end,
   },
@@ -217,25 +222,28 @@ return {
 
       conform.setup({
         formatters_by_ft = {
-          javascript = { "prettier", "eslint_d" },
-          typescript = { "prettier", "eslint_d" },
-          javascriptreact = { "prettier", "eslint_d" },
-          typescriptreact = { "prettier", "eslint_d" },
-          svelte = { "prettier", "eslint_d" },
-          vue = { "prettier", "eslint_d" },
-          css = { "prettier" },
-          html = { "prettier" },
-          json = { "prettier" },
-          yaml = { "prettier" },
-          markdown = { "prettier" },
-          graphql = { "prettier" },
+          javascript = { "prettierd", "eslint_d" },
+          typescript = { "prettierd", "eslint_d" },
+          javascriptreact = { "prettierd", "eslint_d" },
+          typescriptreact = { "prettierd", "eslint_d" },
+          svelte = { "prettierd", "eslint_d" },
+          vue = { "prettierd", "eslint_d" },
+          css = { "prettierd" },
+          html = { "prettierd" },
+          json = { "prettierd" },
+          yaml = { "prettierd" },
+          markdown = { "prettierd" },
+          graphql = { "prettierd" },
           lua = { "stylua" },
           python = { "isort", "black" },
         },
+        async = true,
         format_on_save = {
-          lsp_fallback = true,
-          async = false,
+          lsp_format = "fallback",
           timeout_ms = 500,
+        },
+        format_after_save = {
+          lsp_format = "fallback",
         },
       })
     end,
