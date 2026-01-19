@@ -39,3 +39,13 @@ j=$HOME/Projects/chara.vip
 h=$HOME/Projects/homepage
 dr=$HOME/Projects/dry-run
 cbt=$HOME/Projects/cbt-companion
+
+# CC
+nui=$HOME/Projects/cc/Nuxt\ Layer/ui
+nf=$HOME/Projects/cc/Nuxt\ Layer/forms
+ns=$HOME/Projects/cc/Nuxt\ Layer/store
+nu=$HOME/Projects/cc/Nuxt\ Layer/utils
+fpf=$HOME/Projects/cc/Fleet\ and\ Partner\ Portal/frontend
+fpb=$HOME/Projects/cc/Fleet\ and\ Partner\ Portal/backend
+fpab=$HOME/Projects/cc/Fleet\ and\ Partner\ Portal/account-bootstrap
+crf=$HOME/Projects/cc/Customer-Registration\ Portal/frontend
