@@ -49,3 +49,4 @@ fpf=$HOME/Projects/cc/Fleet\ and\ Partner\ Portal/frontend
 fpb=$HOME/Projects/cc/Fleet\ and\ Partner\ Portal/backend
 fpab=$HOME/Projects/cc/Fleet\ and\ Partner\ Portal/account-bootstrap
 crf=$HOME/Projects/cc/Customer-Registration\ Portal/frontend
+crb=$HOME/Projects/cc/Customer-Registration\ Portal/backend
