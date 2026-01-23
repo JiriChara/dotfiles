@@ -249,6 +249,22 @@ return {
     end,
   },
 
+  {
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup()
+    end,
+  },
+
+  {
+    "andymass/vim-matchup",
+    event = "VeryLazy",
+    init = function()
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end,
+  },
+
   -- Git
   {
     "tpope/vim-fugitive",
@@ -320,5 +336,18 @@ return {
     "folke/trouble.nvim",
     opts = {},
     cmd = "Trouble",
+  },
+
+  -- Diagnostics helper
+  {
+    "NickStafford2/copy-diagnostics.nvim",
+    config = function()
+      vim.g.copy_diagnostics_configuration = {
+        keymap = {
+          all = "<Leader>cy",
+          cursor = "<Leader>cY",
+        },
+      }
+    end,
   },
 }

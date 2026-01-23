@@ -35,3 +35,5 @@
   editor = nvim
 [init]
 	defaultBranch = main
+[url "git@gitlab.chrg.it:"]
+	insteadOf = https://gitlab.chrg.it/

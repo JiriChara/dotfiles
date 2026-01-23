@@ -28,5 +28,5 @@ map("n", "<leader>fb", builtin.buffers, vim.tbl_extend("force", o, { desc = "Tel
 map("n", "<leader>fh", builtin.help_tags, vim.tbl_extend("force", o, { desc = "Telescope help tags" }))
 
 vim.keymap.set("c", "%%", function()
-	return vim.fn.expand("%:p:h")
+  return vim.fn.expand("%:p:h")
 end, { expr = true, replace_keycodes = false })
