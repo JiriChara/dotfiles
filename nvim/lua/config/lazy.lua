@@ -20,7 +20,7 @@ require("lazy").setup({
   spec = {
     { import = "config.plugins" },
   },
-  install = { colorscheme = { "gruvbox" } },
+  install = { colorscheme = { "catppuccin" } },
   checker = { enabled = false },
   rocks = { enabled = false },
 })

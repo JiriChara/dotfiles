@@ -1,3 +1,1 @@
 . ~/.bash/env
-
-SPACESHIP_CONFIG="$HOME/.zsh/spaceship"

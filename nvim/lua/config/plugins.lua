@@ -1,11 +1,12 @@
 return {
   -- Colorscheme
   {
-    "ellisonleao/gruvbox.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
     config = function()
-      require("gruvbox").setup()
-      vim.cmd("colorscheme gruvbox")
+      require("catppuccin").setup()
+      vim.cmd("colorscheme catppuccin")
     end,
   },
 
@@ -93,6 +94,8 @@ return {
           "query",
           "markdown",
           "markdown_inline",
+          "javascript",
+          "json",
           "typescript",
           "css",
           "vue",

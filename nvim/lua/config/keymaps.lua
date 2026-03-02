@@ -19,6 +19,10 @@ map("n", "<A-Down>", "<cmd>resize -1<cr>", o)
 -- Tree Navigator
 map("n", "<C-n>", "<cmd>NvimTreeToggle<cr>", o)
 
+-- Command Line
+map("c", "<C-a>", "<Home>", vim.tbl_extend("force", o, { silent = false }))
+map("c", "<C-e>", "<End>", vim.tbl_extend("force", o, { silent = false }))
+
 -- Telescope fuzzy finder
 local builtin = require("telescope.builtin")
 map("n", "<C-p>", builtin.find_files, vim.tbl_extend("force", o, { desc = "Telescope find files" }))
